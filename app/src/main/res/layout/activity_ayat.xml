@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9F9F9"
+    android:padding="16dp">
+
+    <!-- HEADER: Info Surat -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:id="@+id/suratName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Surat Al-Fatihah"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#2C3E50" />
+
+        <TextView
+            android:id="@+id/suratInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7 Ayat - Makkiyah"
+            android:textSize="14sp"
+            android:textColor="#7F8C8D"
+            android:layout_marginTop="4dp" />
+
+        <!-- Garis pemisah -->
+        <View
+            android:layout_width="40dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="8dp"
+            android:background="#2C3E50"/>
+    </LinearLayout>
+
+    <!-- DAFTAR AYAT: RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewAyat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/item_ayat" />
+</LinearLayout>
+
+
