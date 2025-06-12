@@ -11,7 +11,7 @@
         android:id="@+id/topAppBar"
         android:layout_width="match_parent"
         android:layout_height="85dp"
-        android:paddingTop="20dp"
+        android:paddingTop="25dp"
         android:paddingEnd="15dp"
         android:paddingStart="15dp"
         android:background="#000000"
@@ -19,6 +19,9 @@
         android:titleTextColor="@android:color/white"
         app:navigationIcon="@drawable/ic_arrow_back"
         app:menu="@menu/top_app_bar_menu" />
+
+
+
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

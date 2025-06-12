@@ -21,7 +21,7 @@
             android:layout_height="match_parent"
             android:padding="6dp"
             android:scaleType="centerInside"
-            android:src="@drawable/no_surah"
+            android:src="@drawable/no_surah1"
             android:contentDescription="@null" />
 
         <TextView
@@ -29,8 +29,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="14sp"
-            android:textColor="#000000"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
             tools:text="1" />
     </FrameLayout>
 
@@ -69,28 +69,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
-                android:textColor="#666666"
+                android:textColor="#C7C2C2"
                 tools:text="Mecca" />
             <TextView
                 android:id="@+id/penghalang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
-                android:textColor="#666666"
+                android:textColor="#C7C2C2"
                 tools:text=" | " />
                 <TextView
                 android:id="@+id/jumlahayat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
-                android:textColor="#666666"
+                android:textColor="#C7C2C2"
                 tools:text="7" />
                 <TextView
                 android:id="@+id/tvayat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
-                android:textColor="#666666"
+                android:textColor="#C7C2C2"
                 tools:text=" Ayat" />
 
             </LinearLayout>

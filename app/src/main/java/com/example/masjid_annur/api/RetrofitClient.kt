@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object RetrofitClient {
-    private const val BASE_URL = "https://equran.id" // Ganti dengan URL API Anda
+    private const val BASE_URL = "https://equran.id"
     val mLoggingInterceptor = HttpLoggingInterceptor().apply {
         level=HttpLoggingInterceptor.Level.BASIC
     }

@@ -36,13 +36,15 @@ class NoJuzAdapter(
 
         holder.itemView.setOnClickListener {
             onItemClick(juz) // Handle item click
+            
         }
+
     }
 
     // Method to update the data list
-    fun updateData(newList: List<Juz>) {
-        juzList.clear()
-        juzList.addAll(newList)
-        notifyDataSetChanged()
-    }
+//    fun updateData(newList: List<Juz>) {
+//        juzList.clear()
+//        juzList.addAll(newList)
+//        notifyDataSetChanged()
+//    }
 }

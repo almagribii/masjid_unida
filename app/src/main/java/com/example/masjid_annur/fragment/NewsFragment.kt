@@ -1,4 +1,7 @@
 package com.example.masjid_annur.fragment
 
-class NewsFragment {
+import androidx.fragment.app.Fragment
+import com.example.masjid_annur.R
+
+class NewsFragment : Fragment (R.layout.fragment_news) {
 }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:id="@+id/imageSplash"
+        android:src="@drawable/splash"/>
+
+    <Button
+        android:id="@+id/btnSplash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="660dp"
+        android:backgroundTint="#1E5EA2"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:text="GET STARTED"/>
+
+
+
+</RelativeLayout>

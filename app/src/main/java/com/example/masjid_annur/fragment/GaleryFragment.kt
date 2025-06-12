@@ -1,4 +1,7 @@
 package com.example.masjid_annur.fragment
 
-class GaleryFragment {
+import androidx.fragment.app.Fragment
+import com.example.masjid_annur.R
+
+class GaleryFragment : Fragment(R.layout.fragment_galery){
 }
