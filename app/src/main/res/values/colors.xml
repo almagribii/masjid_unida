@@ -2,4 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="BiruTua">#1E5EA2</color>
+    <color name="BiruMuda">#6FA6CD</color>
+    <color name="AbuAbu">#F1F5F9</color>
+    <color name="AbuAbuTua">#D9D9D9</color>
+    <color name="Emas">#C0A96D</color>
+    <color name="AbuAbuPalingMuda">#FAFAFA</color>
+    <color name="BiruPalingMuda">#D2E9FA</color>
 </resources>

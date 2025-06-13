@@ -104,6 +104,7 @@
         android:layout_height="match_parent"
         android:text="Berita Terbaru"
         android:layout_marginTop="8dp"
+        style="@style/TextAppearance.App.BodyMedium"
         android:textColor="@color/black"
         android:layout_marginStart="24dp"/>
 
@@ -120,6 +121,7 @@
         android:layout_height="match_parent"
         android:text="Kegiatan Terdekat"
         android:textColor="@color/black"
+        style="@style/TextAppearance.App.BodyMedium"
         android:layout_marginTop="8dp"
         android:layout_marginStart="24dp"/>
 

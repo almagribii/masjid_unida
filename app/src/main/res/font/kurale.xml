@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:app="http://schemas.android.com/apk/res-auto">
+    <font app:fontWeight="100" app:fontStyle="normal" app:font="@font/kurale_reguler"/>
+<!--    <font app:fontWeight="100" app:fontStyle="italic" app:font="@font/raleway_thin_italic"/>-->
+<!--    <font app:fontWeight="200" app:fontStyle="normal" app:font="@font/raleway_extra_light"/>-->
+<!--    <font app:fontWeight="200" app:fontStyle="italic" app:font="@font/raleway_extra_light_italic"/>-->
+<!--    <font app:fontWeight="300" app:fontStyle="normal" app:font="@font/raleway_light"/>-->
+<!--    <font app:fontWeight="300" app:fontStyle="italic" app:font="@font/raleway_light_italic"/>-->
+<!--    <font app:fontWeight="400" app:fontStyle="normal" app:font="@font/raleway_regular"/>-->
+<!--    <font app:fontWeight="400" app:fontStyle="italic" app:font="@font/raleway_italic"/>-->
+<!--    <font app:fontWeight="500" app:fontStyle="normal" app:font="@font/raleway_medium"/>-->
+<!--    <font app:fontWeight="500" app:fontStyle="italic" app:font="@font/raleway_medium_italic"/>-->
+<!--    <font app:fontWeight="600" app:fontStyle="normal" app:font="@font/raleway_semi_bold"/>-->
+<!--    <font app:fontWeight="600" app:fontStyle="italic" app:font="@font/raleway_semi_bold_italic"/>-->
+<!--    <font app:fontWeight="700" app:fontStyle="normal" app:font="@font/raleway_bold"/>-->
+<!--    <font app:fontWeight="700" app:fontStyle="italic" app:font="@font/raleway_bold_italic"/>-->
+<!--    <font app:fontWeight="800" app:fontStyle="normal" app:font="@font/raleway_extra_bold"/>-->
+<!--    <font app:fontWeight="800" app:fontStyle="italic" app:font="@font/raleway_extra_bold_italic"/>-->
+<!--    <font app:fontWeight="900" app:fontStyle="normal" app:font="@font/raleway_black"/>-->
+<!--    <font app:fontWeight="900" app:fontStyle="italic" app:font="@font/raleway_black_italic"/>-->
+</font-family>
