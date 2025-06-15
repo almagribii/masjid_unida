@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:orientation="horizontal"
     android:layout_marginTop="6dp"
+    android:background="@color/white"
     android:layout_height="wrap_content">
 
     <FrameLayout
@@ -12,8 +13,8 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="8dp"
-            android:src="@drawable/no_ayat"
+
+            android:src="@drawable/no_surah1"
             android:scaleType="centerInside" />
 
         <TextView
@@ -22,9 +23,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="1"
-            android:textSize="14sp"
-            android:textColor="@color/white"
-            android:textStyle="bold"/>
+            android:textSize="10sp"
+            android:textColor="@color/black" />
     </FrameLayout>
 
     <LinearLayout
@@ -37,8 +37,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="24sp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:layout_marginEnd="10dp"
+            android:fontFamily="@font/kurale_reguler"
             android:layout_marginBottom="7dp"
             android:text="الفاتحالفاتحالفاتحالفاتحالفاتحالفاتحالفاتح"/>
 
@@ -47,16 +48,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:textColor="@color/white"
+            android:textColor="@color/BiruTua"
             android:layout_marginBottom="8dp"
             android:textStyle="italic"
+            android:fontFamily="@font/kurale_reguler"
             android:text="al-hamdulillahirobbialaminn"/>
 
         <TextView
             android:id="@+id/arti"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
+            android:fontFamily="@font/kurale_reguler"
             android:textSize="16sp"
             android:text="Dengan Menyebut Nama Allah Yang maha pengasih lagi maha penyayang"/>
     </LinearLayout>

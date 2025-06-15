@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        app:cardBackgroundColor="@color/cardview_shadow_end_color">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="16dp"
+        android:paddingTop="36dp">
+
+        <LinearLayout
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/border_menu"
+            android:gravity="center"
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="20dp"
+            android:layout_height="12dp"
+            android:contentDescription="Back"
+            android:background="@drawable/ic_arrow_back" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/TextAppearance.App.TitleMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bantuan"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF9C4"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_info"
+            android:tint="#FBC02D"
+            android:contentDescription="Information"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/TextAppearance.App.LabelMedium"
+            android:text="Jawaban atas pertanyaan Anda akan kami kirimkan melalui email."
+            android:textColor="#333333"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tuliskan bantuan yang Anda butuhkan"
+        android:fontFamily="@font/kurale_reguler"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Topik"
+        style="@style/TextAppearance.App.LabelLarge"
+        android:textColor="@color/black"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/edittext_topik"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext_topik"
+        android:hint="Tuliskan topik"
+        android:textColor="@color/black"
+        style="@style/TextAppearance.App.BodyMedium"
+        android:padding="12dp"
+        android:inputType="text"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kategori"
+        style="@style/TextAppearance.App.LabelLarge"
+        android:textColor="@color/black"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/edittext_kategori"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext_topik"
+        android:hint="Tuliskan kategori"
+        style="@style/TextAppearance.App.BodyMedium"
+        android:padding="12dp"
+        android:textColor="@color/black"
+        android:inputType="text"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pertanyaan"
+        style="@style/TextAppearance.App.LabelLarge"
+        android:textColor="@color/black"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/edittext_pertanyaan"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/edittext_topik"
+        android:gravity="top"
+        android:hint="Tuliskan pertanyaan Anda"
+        style="@style/TextAppearance.App.BodyMedium"
+        android:padding="12dp"
+        android:textColor="@color/black"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Foto Pendukung (Opsional)"
+        style="@style/TextAppearance.App.LabelLarge"
+        android:textColor="@color/black"
+        android:layout_marginBottom="8dp" />
+
+    <LinearLayout
+        android:id="@+id/layout_upload_photo"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/edittext_topik"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginBottom="24dp">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_camera"
+            android:contentDescription="Upload Photo"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Unggah gambar sebagai foto pendukung"
+            style="@style/TextAppearance.App.BodySmall"
+            android:textColor="#999999"
+            android:textSize="14sp" />
+    </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_kirim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kirim"
+        android:fontFamily="@font/kurale_reguler"
+        android:backgroundTint="@color/BiruTua"
+        android:textColor="#FFFFFF"
+        android:padding="12dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:textSize="18sp"
+        android:textAllCaps="false" />
+
+</LinearLayout>

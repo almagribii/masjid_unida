@@ -35,6 +35,7 @@
                 android:layout_marginBottom="4dp"
                 android:ellipsize="end"
                 android:maxLines="2"
+                android:fontFamily="@font/kurale_reguler"
                 android:text="Pengajian Ahad Pagi"
                 android:textColor="@color/black"
                 android:textSize="12sp"
@@ -49,6 +50,7 @@
                 android:ellipsize="end"
                 android:lineSpacingExtra="1dp"
                 android:maxLines="3"
+                android:fontFamily="@font/kurale_reguler"
                 android:text="Pengajian ahada adalah acara yang diselenggarakan setiap minggu sekali dan dihadiri oleh masyarakat sekitar ponorogo."
                 android:textColor="@android:color/darker_gray"
                 android:textSize="9sp" />
@@ -58,7 +60,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Read More"
-
+                android:textColor="@color/black"
+                android:fontFamily="@font/kurale_reguler"
                 android:textSize="8sp"
                 android:textStyle="bold" />
 

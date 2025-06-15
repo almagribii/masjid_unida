@@ -4,5 +4,8 @@
 
     </style>
 
-    <style name="Theme.MasjidAnnur" parent="Base.Theme.MasjidAnnur" />
+    <style name="Theme.MasjidAnnur" parent="Base.Theme.MasjidAnnur" >
+
+    </style>
+
 </resources>

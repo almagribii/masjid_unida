@@ -1,10 +1,7 @@
 package com.example.masjid_annur.activity
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import android.widget.Toast
+import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
@@ -18,11 +15,17 @@ class QuranActivity : AppCompatActivity() {
 
     private lateinit var viewPager: ViewPager2
     private lateinit var tabLayout: TabLayout
+    private lateinit var btnBack: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.quran_activity)
+        setContentView(R.layout.activity_alquran)
+        btnBack = findViewById(R.id.btnQuran)
+
+        btnBack.setOnClickListener {
+            finish()
+        }
 
         viewPager = findViewById(R.id.viewPager)
         tabLayout = findViewById(R.id.tabLayout)

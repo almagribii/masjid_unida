@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="14sp"
-            android:textColor="#000000"
+            android:textColor="@color/black"
             tools:text="1" />
     </FrameLayout>
 
@@ -56,7 +56,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/black"
+                android:fontFamily="@font/kurale_reguler"
                 tools:text="Al-Fatihah" />
 
             <LinearLayout

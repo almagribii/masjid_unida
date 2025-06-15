@@ -21,21 +21,20 @@
         android:theme="@style/Theme.MasjidAnnur"
         tools:targetApi="31">
         <activity
+            android:name=".activity.BantuanActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.SplashActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.QuranActivity" />
         <activity android:name=".activity.AyatActivity" />
-        <activity android:name=".activity.JadwalSholatActivity" />
-
     </application>
 
 </manifest>

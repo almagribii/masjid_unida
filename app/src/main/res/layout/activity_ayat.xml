@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:layout_marginTop="8dp"
+        android:background="@color/white"
         android:paddingBottom="16dp">
 
         <TextView
@@ -20,9 +20,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Surat Al-Fatihah"
-            android:textSize="24sp"
+            style="@style/TextAppearance.App.HeadlineSmall"
             android:textStyle="bold"
-            android:textColor="@color/white" />
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/suratInfo"
@@ -30,7 +30,8 @@
             android:layout_height="wrap_content"
             android:text="7 Ayat - Makkiyah"
             android:textSize="14sp"
-            android:textColor="#7F8C8D"
+            android:fontFamily="@font/kurale_reguler"
+            android:textColor="#565050"
             android:layout_marginTop="4dp" />
 
         <!-- Garis pemisah -->
@@ -46,6 +47,7 @@
         android:id="@+id/recyclerViewAyat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         tools:listitem="@layout/item_ayat" />
 </LinearLayout>
 
