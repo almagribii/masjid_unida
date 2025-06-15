@@ -105,6 +105,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
                     <LinearLayout
+                        android:id="@+id/btnJadwal"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:layout_marginStart="20dp"
@@ -132,6 +133,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
                     <LinearLayout
+                        android:id="@+id/btnKiblat"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:background="@drawable/border_menu"

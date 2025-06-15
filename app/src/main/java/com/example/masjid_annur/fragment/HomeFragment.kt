@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.masjid_annur.R
+import com.example.masjid_annur.activity.JadwalSholatActivity
+import com.example.masjid_annur.activity.KiblatActivity
 import com.example.masjid_annur.activity.QuranActivity
 import com.example.masjid_annur.activity.TasbihActivity
 import com.example.masjid_annur.adapters.Activity2Adapter
@@ -26,6 +28,8 @@ class HomeFragment : Fragment() {
     private lateinit var layoutManager: LinearLayoutManager
     private lateinit var layoutManager2: LinearLayoutManager
     private lateinit var btnTasbih: LinearLayout
+    private lateinit var btnJadwal : LinearLayout
+    private lateinit var btnKiblat : LinearLayout
 
 
     override fun onCreateView(
@@ -36,6 +40,8 @@ class HomeFragment : Fragment() {
 
         btnQuran = view.findViewById(R.id.btnQuran)
         btnTasbih = view.findViewById(R.id.btnTasbih)
+        btnJadwal = view.findViewById(R.id.btnJadwal)
+        btnKiblat = view.findViewById(R.id.btnKiblat)
         btnQuran?.setOnClickListener {
             val intent = Intent(activity, QuranActivity::class.java)
             startActivity(intent)
@@ -43,6 +49,15 @@ class HomeFragment : Fragment() {
 
         btnTasbih?.setOnClickListener{
             val intent = Intent(activity, TasbihActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnJadwal?.setOnClickListener{
+            val intent = Intent (activity, JadwalSholatActivity::class.java)
+            startActivity(intent)
+        }
+        btnKiblat?.setOnClickListener{
+            val intent = Intent(activity, KiblatActivity::class.java)
             startActivity(intent)
         }
     return view

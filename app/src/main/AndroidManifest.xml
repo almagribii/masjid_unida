@@ -36,6 +36,8 @@
         <activity android:name=".activity.QuranActivity" />
         <activity android:name=".activity.AyatActivity" />
         <activity android:name=".activity.TasbihActivity" />
+        <activity android:name=".activity.JadwalSholatActivity" />
+        <activity android:name=".activity.KiblatActivity" />
     </application>
 
 </manifest>
