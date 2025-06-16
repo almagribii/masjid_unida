@@ -100,8 +100,8 @@
 
         <ImageView
             android:id="@+id/ivArrowRightProfile"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
             android:contentDescription="Go to profile details"
             android:src="@drawable/ic_arrow_right"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -156,8 +156,8 @@
 
             <ImageView
                 android:id="@+id/arrowBahasa"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
                 android:layout_marginEnd="16dp"
                 android:contentDescription="Go to language settings"
                 android:src="@drawable/ic_arrow_right"
@@ -201,7 +201,7 @@
 
             <ImageView
                 android:id="@+id/arrowBantuan"
-                android:layout_width="20dp"
+                android:layout_width="16dp"
                 android:layout_height="20dp"
                 android:layout_marginEnd="16dp"
                 android:contentDescription="Go to help section"
@@ -246,8 +246,8 @@
 
             <ImageView
                 android:id="@+id/arrowHubungiKami"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
                 android:layout_marginEnd="16dp"
                 android:contentDescription="Go to contact us section"
                 android:src="@drawable/ic_arrow_right"
@@ -291,8 +291,8 @@
 
             <ImageView
                 android:id="@+id/arrowTentangAplikasi"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
                 android:layout_marginEnd="16dp"
                 android:contentDescription="Go to about app section"
                 android:src="@drawable/ic_arrow_right"
@@ -336,14 +336,15 @@
 
             <ImageView
                 android:id="@+id/arrowSyaratKetentuan"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
                 android:layout_marginEnd="16dp"
                 android:contentDescription="Go to terms and conditions"
                 android:src="@drawable/ic_arrow_right"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.333" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -381,8 +382,8 @@
 
             <ImageView
                 android:id="@+id/arrowFAQ"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
                 android:layout_marginEnd="16dp"
                 android:contentDescription="Go to FAQ section"
                 android:src="@drawable/ic_arrow_right"

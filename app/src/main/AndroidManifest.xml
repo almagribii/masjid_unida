@@ -38,6 +38,10 @@
         <activity android:name=".activity.TasbihActivity" />
         <activity android:name=".activity.JadwalSholatActivity" />
         <activity android:name=".activity.KiblatActivity" />
+        <activity android:name=".activity.HubungiKamiActivity" />
+        <activity android:name=".activity.SyaratDanKetentuanActivity" />
+        <activity android:name=".activity.TentangAplikasiActivity" />
+        <activity android:name=".activity.FAQActivity" />
     </application>
 
 </manifest>
