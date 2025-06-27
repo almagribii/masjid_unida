@@ -36,25 +36,24 @@ class ProfileFragment : Fragment() {
         btnBantuan?.setOnClickListener {
             val intent = Intent(activity, BantuanActivity::class.java)
             startActivity(intent)
+        }
+        btnHk?.setOnClickListener {
+            val intent = Intent(activity, HubungiKamiActivity::class.java)
+            startActivity(intent)
+        }
 
-            btnHk?.setOnClickListener {
-                val intent = Intent(activity, HubungiKamiActivity::class.java)
-                startActivity(intent)
-            }
+        btnTa?.setOnClickListener {
+            val intent = Intent(activity, TentangAplikasiActivity::class.java)
+            startActivity(intent)
+        }
 
-            btnTa?.setOnClickListener {
-                val intent = Intent(activity, TentangAplikasiActivity::class.java)
-                startActivity(intent)
-            }
-
-            btnSk?.setOnClickListener {
-                val intent = Intent(activity, SyaratDanKetentuanActivity::class.java)
-                startActivity(intent)
-            }
-            btnFaq?.setOnClickListener {
-                val intent = Intent(activity, FAQActivity::class.java)
-                startActivity(intent)
-            }
+        btnSk?.setOnClickListener {
+            val intent = Intent(activity, SyaratDanKetentuanActivity::class.java)
+            startActivity(intent)
+        }
+        btnFaq?.setOnClickListener {
+            val intent = Intent(activity, FAQActivity::class.java)
+            startActivity(intent)
         }
         return view
     }

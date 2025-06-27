@@ -21,8 +21,7 @@
         android:theme="@style/Theme.MasjidAnnur"
         tools:targetApi="31">
         <activity
-            android:name=".activity.BantuanActivity"
-            android:exported="false" />
+            android:name=".activity.BantuanActivity" />
         <activity
             android:name=".activity.SplashActivity"
             android:exported="true">
@@ -36,12 +35,15 @@
         <activity android:name=".activity.QuranActivity" />
         <activity android:name=".activity.AyatActivity" />
         <activity android:name=".activity.TasbihActivity" />
-        <activity android:name=".activity.JadwalSholatActivity" />
         <activity android:name=".activity.KiblatActivity" />
         <activity android:name=".activity.HubungiKamiActivity" />
         <activity android:name=".activity.SyaratDanKetentuanActivity" />
         <activity android:name=".activity.TentangAplikasiActivity" />
         <activity android:name=".activity.FAQActivity" />
+        <activity android:name=".activity.TanyaUstadzActivity" />
+        <activity android:name=".activity.JadwalSholatActivity" />
+
+
     </application>
 
 </manifest>

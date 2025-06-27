@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.App.HeadlineMedium" parent="android:TextAppearance">
+        <item name="android:textSize">26sp</item>
+        <item name="android:lineHeight">36sp</item>
+        <item name="android:fontFamily">@font/kurale_reguler</item>
+    </style>
+</resources>

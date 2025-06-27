@@ -14,6 +14,7 @@ import com.example.masjid_annur.R
 import com.example.masjid_annur.activity.JadwalSholatActivity
 import com.example.masjid_annur.activity.KiblatActivity
 import com.example.masjid_annur.activity.QuranActivity
+import com.example.masjid_annur.activity.TanyaUstadzActivity
 import com.example.masjid_annur.activity.TasbihActivity
 import com.example.masjid_annur.adapters.Activity2Adapter
 import com.example.masjid_annur.adapters.ActivityAdapter
@@ -30,6 +31,7 @@ class HomeFragment : Fragment() {
     private lateinit var btnTasbih: LinearLayout
     private lateinit var btnJadwal : LinearLayout
     private lateinit var btnKiblat : LinearLayout
+    private lateinit var btnTanya : LinearLayout
 
 
     override fun onCreateView(
@@ -42,8 +44,14 @@ class HomeFragment : Fragment() {
         btnTasbih = view.findViewById(R.id.btnTasbih)
         btnJadwal = view.findViewById(R.id.btnJadwal)
         btnKiblat = view.findViewById(R.id.btnKiblat)
+        btnTanya = view.findViewById(R.id.btnTanya)
+
         btnQuran?.setOnClickListener {
             val intent = Intent(activity, QuranActivity::class.java)
+            startActivity(intent)
+        }
+        btnTanya?.setOnClickListener {
+            val intent = Intent(activity, TanyaUstadzActivity::class.java)
             startActivity(intent)
         }
 
@@ -65,43 +73,40 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        recyclerView2 = view.findViewById(R.id.recyclerView2)
+//        recyclerView2 = view.findViewById(R.id.recyclerView2)
         recyclerView = view.findViewById(R.id.recyclerView)
         layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        layoutManager2 = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+//        layoutManager2 = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         recyclerView.layoutManager = layoutManager
-        recyclerView2.layoutManager = layoutManager2
+//        recyclerView2.layoutManager = layoutManager2
 //        recyclerView2.layoutManager = NoScrollLinearLayoutManager(context)
 //        (recyclerView2.layoutManager as NoScrollLinearLayoutManager).disableScrolling()
 
         val data = List(20) { "Pengajian Ahad Pagi ${it + 1}" }
-        val data2 = List(20) { "Pengajian Ahad Pagi ${it + 1}" }
 
         adapter = ActivityAdapter(data)
         recyclerView.adapter = adapter
-        adapter2 = Activity2Adapter(data2)
-        recyclerView2.adapter = adapter2
+
 
     }
-//class NoScrollLinearLayoutManager(context: Context?) : LinearLayoutManager(context) {
-//    private var scrollable = true
-//
-//    fun enableScrolling() {
-//        scrollable = true
-//    }
-//
-//    fun disableScrolling() {
-//        scrollable = false
-//    }
-//
-//    override fun canScrollVertically() =
-//        super.canScrollVertically() && scrollable
-//
-//
-//    override fun canScrollHorizontally() =
-//        super.canScrollVertically()
-//
-//                && scrollable
-//}
+class NoScrollLinearLayoutManager(context: Context?) : LinearLayoutManager(context) {
+    private var scrollable = true
 
+    fun enableScrolling() {
+        scrollable = true
+    }
+
+    fun disableScrolling() {
+        scrollable = false
+    }
+
+    override fun canScrollVertically() =
+        super.canScrollVertically() && scrollable
+
+
+    override fun canScrollHorizontally() =
+        super.canScrollVertically()
+
+                && scrollable
+}
 }

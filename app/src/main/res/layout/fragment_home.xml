@@ -20,11 +20,35 @@
 
             android:orientation="vertical">
 
-            <ImageView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/masjid_setengah" />
+                android:gravity="bottom"
+                android:background="@drawable/masjid_setengah" >
+
+                <LinearLayout
+                    android:id="@+id/btnTanya"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:background="@drawable/border_tanya_ustadz"
+                    android:layout_margin="16dp" >
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_ustadz"
+                        app:tint="@color/black"
+                        android:layout_marginStart="20dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tanya Pak Ustadz"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        style="@style/TextAppearance.App.BodyMedium"
+                        android:layout_marginStart="1dp"/>
+                </LinearLayout>
+            </LinearLayout>
 
             <FrameLayout
                 android:layout_width="match_parent"

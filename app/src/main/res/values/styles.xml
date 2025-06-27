@@ -89,4 +89,37 @@
         <item name="android:lineHeight">16sp</item>
         <item name="android:fontFamily">@font/kurale_reguler</item>
     </style>
+    <style name="Theme.YourApp" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="bottomNavigationStyle">@style/Widget.App.BottomNavigationView</item>
+        <item name="colorPrimary">@color/BiruTua</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/black</item>
+    </style>
+
+    <style name="Widget.App.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView.PrimarySurface">
+        <item name="itemTextAppearanceActive">@style/BottomNavigationView.ActiveText</item>
+        <item name="itemTextAppearanceInactive">@style/BottomNavigationView.InactiveText</item>
+
+        <item name="itemIconTint">@color/BiruTua</item>
+        <item name="itemTextColor">@color/BiruTua</item>
+    </style>
+
+    <style name="BottomNavigationView.ActiveText" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/BiruTua</item>
+        <item name="fontFamily">@font/kurale_reguler</item>
+        <item name="android:fontFamily">@font/kurale_reguler</item>
+    </style>
+
+    <style name="BottomNavigationView.InactiveText" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/BiruTua</item>
+        <item name="fontFamily">@font/kurale_reguler</item>
+        <item name="android:fontFamily">@font/kurale_reguler</item>
+    </style>
+
+
 </resources>

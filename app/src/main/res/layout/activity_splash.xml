@@ -17,11 +17,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="156dp"
         android:layout_marginTop="660dp"
-        android:backgroundTint="#1E5EA2"
+        android:backgroundTint="@color/BiruTua"
         android:textColor="@color/white"
         android:layout_centerHorizontal="true"
+        style="@style/TextAppearance.App.LabelLarge"
         android:text="GET STARTED"/>
-
-
 
 </RelativeLayout>
