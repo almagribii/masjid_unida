@@ -10,10 +10,37 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
         android:background="@color/white"
+
         android:paddingBottom="16dp">
+
+        <LinearLayout
+            android:id="@+id/btnBback"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/border_menu"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="20dp"
+                android:layout_height="12dp"
+                android:background="@drawable/ic_arrow_back"
+                android:contentDescription="Back" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:textAlignment="center"
+            android:orientation="vertical">
 
         <TextView
             android:id="@+id/suratName"
@@ -40,21 +67,6 @@
             android:layout_height="2dp"
             android:layout_marginTop="8dp"
             android:background="#2C3E50"/>
-        <LinearLayout
-            android:id="@+id/btnBback"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/border_menu"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="20dp"
-                android:layout_height="12dp"
-                android:contentDescription="Back"
-                android:background="@drawable/ic_arrow_back" />
         </LinearLayout>
     </LinearLayout>
 

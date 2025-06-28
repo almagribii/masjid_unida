@@ -1,6 +1,5 @@
 package com.example.masjid_annur.api
 
-import com.example.masjid_annur.api.QuranComApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -8,11 +7,11 @@ import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-object RetrofitQuranCom {
-    private const val BASE_URL = "https://api.quran.cloud"
+object RetrofitJuz {
+    private const val BASE_URL = "https://api.myquran.com/v2/quran/"
 
     val mLoggingInterceptor = HttpLoggingInterceptor().apply {
-        level=HttpLoggingInterceptor.Level.BASIC
+        level= HttpLoggingInterceptor.Level.BASIC
     }
 
     val okHttpClient = OkHttpClient.Builder()
@@ -25,13 +24,13 @@ object RetrofitQuranCom {
         .build()
 
 
-    val instance : QuranComApi by lazy {
+    val instance : QuranApi by lazy {
         Retrofit.Builder()
-            .baseUrl(RetrofitQuranCom.BASE_URL)
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .client(okHttpClient)
             .build()
-            .create(QuranComApi::class.java)
+            .create(QuranApi::class.java)
     }
 }

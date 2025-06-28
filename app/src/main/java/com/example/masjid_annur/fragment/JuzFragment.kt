@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,10 +15,10 @@ import com.example.masjid_annur.activity.AyatActivity
 import com.example.masjid_annur.adapters.NoJuzAdapter
 import com.example.masjid_annur.adapters.NoSurahAdapter
 import com.example.masjid_annur.api.Juz
-import com.example.masjid_annur.api.JuzDetailResponse
+import com.example.masjid_annur.api.QuranJuzResponse
+import com.example.masjid_annur.api.RetrofitJuz
 
 
-import com.example.masjid_annur.api.RetrofitQuranCom
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -46,29 +47,17 @@ class JuzFragment : Fragment() {
     }
 
     private fun ambilData() {
-        for (i in 1..30) {
-            RetrofitQuranCom.instance.getJuzByNumber(i)
-                .enqueue(object : Callback<JuzDetailResponse> {
-                    override fun onResponse(
-                        call: Call<JuzDetailResponse>,
-                        response: Response<JuzDetailResponse>
-                    ) {
-                        if (response.isSuccessful) {
-                            val juzData = response.body()?.data
-                            juzData?.let {
-                                juzList.addAll(it) // Menambahkan data ke list
-                                juzAdapter.notifyDataSetChanged() // Menyegarkan RecyclerView
-                            }
-                            Log.d("JuzLoop", "Juz $i berhasil dimuat")
-                        } else {
-                            Log.e("JuzLoop", "Gagal ambil Juz $i: ${response.message()}")
-                        }
-                    }
+        RetrofitJuz.instance.getAllJuz().enqueue(object : Callback<QuranJuzResponse> {
+            override fun onResponse(p0: Call<QuranJuzResponse>, p1: Response<QuranJuzResponse>) {
+                if (p1.isSuccessful) {
+                    val data = p1.body()?.data ?: emptyList()
+                    juzAdapter.updateData(data)
+                }
+            }
 
-                    override fun onFailure(call: Call<JuzDetailResponse>, t: Throwable) {
-                        Log.e("JuzLoop", "Error ambil Juz $i: ${t.message}")
-                    }
-                })
-        }
+            override fun onFailure(p0: Call<QuranJuzResponse>, p1: Throwable) {
+                Toast.makeText(requireContext(), "Gagal ambil data: ${p1.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 }

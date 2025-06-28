@@ -1,5 +1,6 @@
 package com.example.masjid_annur.api
 
+import com.google.android.gms.common.api.Response
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -12,6 +13,9 @@ interface QuranApi {
     fun getDetailSurah(
         @Path("nomor") nomor: Int
     ): Call<SurahRespone>
+
+    @GET("juz/semua")
+    fun getAllJuz(): Call<QuranJuzResponse>
 }
 
 data class JuzRespone(
@@ -63,4 +67,30 @@ data class SuratSelanjutnya(
     val nama: String,
     val namaLatin: String,
     val jumlahAyat: Int
+)
+
+data class QuranJuzResponse(
+    val status: Boolean,
+    val request: Request,
+    val data: List<Juz>
+)
+
+data class Request(
+    val path: String
+)
+
+data class Juz(
+    val ayat_arab: String,
+    val ayat_indo: String,
+    val ayat_latin: String,
+    val name: String,
+    val name_end_arab: String,
+    val name_end_id: String,
+    val name_start_arab: String,
+    val name_start_id: String,
+    val number: String,
+    val surah_id_end: String,
+    val surah_id_start: String,
+    val verse_end: String,
+    val verse_start: String
 )

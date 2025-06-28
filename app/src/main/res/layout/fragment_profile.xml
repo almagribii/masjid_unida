@@ -122,51 +122,6 @@
         app:layout_constraintTop_toBottomOf="@id/profileSection">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/itemBahasa"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:paddingStart="16dp"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp">
-
-            <ImageView
-                android:id="@+id/iconBahasa"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:contentDescription="Language"
-                android:src="@drawable/ic_language"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tvBahasa"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Bahasa"
-                android:textColor="@android:color/black"
-                style="@style/TextAppearance.App.BodyLarge"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/arrowBahasa"
-                app:layout_constraintStart_toEndOf="@id/iconBahasa"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/arrowBahasa"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:layout_marginEnd="16dp"
-                android:contentDescription="Go to language settings"
-                android:src="@drawable/ic_arrow_right"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/itemBantuan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
