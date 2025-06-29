@@ -19,6 +19,11 @@ interface QuranApi {
 
     @GET("hadits/arbain/semua")
     fun getHaditsArbain(): Call<HaditsResponse>
+
+    @GET("hadits/arbain/{number}")
+    fun getDetailHaditsArbain(
+        @Path("number") number: String
+    ): Call<HaditsResponse2>
 }
 
 
@@ -108,6 +113,13 @@ data class HaditsResponse(
     val request: Requestt,
     val info: Info,
     val data: List<Hadith>
+)
+
+data class HaditsResponse2(
+    val status: Boolean,
+    val request: Requestt,
+    val info: Info,
+    val data: Hadith
 )
 
 data class Requestt(

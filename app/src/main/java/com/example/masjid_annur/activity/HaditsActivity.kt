@@ -1,5 +1,6 @@
 package com.example.masjid_annur.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.Toast
@@ -28,7 +29,10 @@ class HaditsActivity : AppCompatActivity() {
 
         btnBack = findViewById(R.id.btnBack)
         recyclerHadits = findViewById(R.id.recyclerHadits)
-        haditsAdapter = HaditsAdapter(haditsList) { selectedHadits ->
+        haditsAdapter = HaditsAdapter(haditsList) { clickedHadith ->
+            val intent = Intent(this, IsiHaditsActivity::class.java)
+            intent.putExtra("HADITH_NUMBER", clickedHadith.no)
+            startActivity(intent)
         }
         btnBack.setOnClickListener {
             finish()
