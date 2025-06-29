@@ -1,5 +1,6 @@
 package com.example.masjid_annur.adapters
 
+import HomeFragment
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.masjid_annur.activity.QuranActivity
@@ -17,6 +18,4 @@ class QuranPagerAdapter(activity: QuranActivity): FragmentStateAdapter(activity)
             else -> throw IllegalStateException("Unexpected position: $position")
         }
     }
-
-
 }

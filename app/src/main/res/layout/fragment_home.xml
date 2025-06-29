@@ -120,7 +120,7 @@
                             style="@style/TextAppearance.App.LabelMedium"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Tasbih"
+                            android:text="Hadits Arba'in"
                             android:gravity="center_horizontal"
                             android:textColor="@color/black" />
                     </LinearLayout>
@@ -147,7 +147,7 @@
                         style="@style/TextAppearance.App.LabelMedium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Jadwal Sholat"
+                        android:text="Sholat"
                         android:gravity="center_horizontal"
                         android:textColor="@color/black" />
                     </LinearLayout>
@@ -177,7 +177,7 @@
                             style="@style/TextAppearance.App.LabelMedium"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Kiblat"
+                            android:text="Doa-doa"
                             android:gravity="center_horizontal"
                             android:textColor="@color/black" />
                     </LinearLayout>

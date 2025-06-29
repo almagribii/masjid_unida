@@ -120,7 +120,7 @@
                 android:paddingTop="4dp"
                 android:gravity="center">
 
-                <ImageView
+                <LinearLayout
                     android:id="@+id/btn_copy_whatsapp"
                     android:layout_width="12dp"
                     android:layout_height="12dp"
@@ -342,10 +342,10 @@
 
                 <TextView
                     android:id="@+id/tv_instagram_username"
+                    style="@style/TextAppearance.App.LabelMedium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="brucadal_"
-                    style="@style/TextAppearance.App.LabelMedium"
                     android:textColor="@android:color/black" />
             </LinearLayout>
 
