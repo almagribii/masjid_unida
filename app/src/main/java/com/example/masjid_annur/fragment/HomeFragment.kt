@@ -1,8 +1,6 @@
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +13,7 @@ import com.example.masjid_annur.activity.JadwalSholatActivity
 import com.example.masjid_annur.activity.KiblatActivity
 import com.example.masjid_annur.activity.QuranActivity
 import com.example.masjid_annur.activity.TanyaUstadzActivity
-import com.example.masjid_annur.activity.TasbihActivity
+import com.example.masjid_annur.activity.HaditsActivity
 import com.example.masjid_annur.adapters.Activity2Adapter
 import com.example.masjid_annur.adapters.ActivityAdapter
 
@@ -56,7 +54,7 @@ class HomeFragment : Fragment() {
         }
 
         btnTasbih?.setOnClickListener{
-            val intent = Intent(activity, TasbihActivity::class.java)
+            val intent = Intent(activity, HaditsActivity::class.java)
             startActivity(intent)
         }
 

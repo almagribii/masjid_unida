@@ -14,10 +14,15 @@ interface QuranApi {
         @Path("nomor") nomor: Int
     ): Call<SurahRespone>
 
-    @GET("juz/semua")
+    @GET("quran/juz/semua")
     fun getAllJuz(): Call<QuranJuzResponse>
+
+    @GET("hadits/arbain/semua")
+    fun getHaditsArbain(): Call<HaditsResponse>
 }
 
+
+//Surah dan daftarnya
 data class JuzRespone(
     val code: Int,
     val message: String,
@@ -69,6 +74,8 @@ data class SuratSelanjutnya(
     val jumlahAyat: Int
 )
 
+
+//JUZ DAN DAFTARNYA
 data class QuranJuzResponse(
     val status: Boolean,
     val request: Request,
@@ -93,4 +100,28 @@ data class Juz(
     val surah_id_start: String,
     val verse_end: String,
     val verse_start: String
+)
+
+//HADITS ARBAIN
+data class HaditsResponse(
+    val status: Boolean,
+    val request: Requestt,
+    val info: Info,
+    val data: List<Hadith>
+)
+
+data class Requestt(
+    val path: String
+)
+
+data class Info(
+    val min: Int,
+    val max: Int
+)
+
+data class Hadith(
+    val arab: String,
+    val indo: String,
+    val judul: String,
+    val no: String
 )

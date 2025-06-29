@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object RetrofitJuz {
-    private const val BASE_URL = "https://api.myquran.com/v2/quran/"
+    private const val BASE_URL = "https://api.myquran.com/v2/"
 
     val mLoggingInterceptor = HttpLoggingInterceptor().apply {
         level= HttpLoggingInterceptor.Level.BASIC
