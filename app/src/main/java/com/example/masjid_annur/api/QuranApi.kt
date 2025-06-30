@@ -1,6 +1,6 @@
 package com.example.masjid_annur.api
 
-import com.google.android.gms.common.api.Response
+import okio.Source
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -24,6 +24,9 @@ interface QuranApi {
     fun getDetailHaditsArbain(
         @Path("number") number: String
     ): Call<HaditsResponse2>
+
+    @GET("doa/acak")
+    fun getDoaAcak() : Call<DoaAcakRespone>
 }
 
 
@@ -136,4 +139,23 @@ data class Hadith(
     val indo: String,
     val judul: String,
     val no: String
+)
+
+//Data Hadits Acak
+data class DoaAcakRespone(
+    val status: Boolean,
+    val request: Requesttt,
+    val data: DoaDetail
+)
+
+data class Requesttt(
+    val path: String,
+    val id : Int
+)
+
+data class DoaDetail(
+    val arab: String,
+    val indo: String,
+    val judul: String,
+    val source: String
 )
