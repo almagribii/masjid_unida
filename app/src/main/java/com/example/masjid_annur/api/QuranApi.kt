@@ -27,6 +27,9 @@ interface QuranApi {
 
     @GET("doa/acak")
     fun getDoaAcak() : Call<DoaAcakRespone>
+
+    @GET("doa/sumber")
+    fun getDoaSumber() : Call<DoaSumberRespone>
 }
 
 
@@ -158,4 +161,14 @@ data class DoaDetail(
     val indo: String,
     val judul: String,
     val source: String
+)
+
+//Data Doa Sumber
+data class DoaSumberRespone(
+    val  status: Boolean,
+    val request: Requestttt,
+    val data : List<String>
+)
+data class Requestttt(
+    val path : String
 )

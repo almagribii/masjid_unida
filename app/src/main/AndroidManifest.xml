@@ -37,7 +37,7 @@
         <activity android:name=".activity.QuranActivity" />
         <activity android:name=".activity.AyatActivity" />
         <activity android:name=".activity.HaditsActivity" />
-        <activity android:name=".activity.KiblatActivity" />
+        <activity android:name=".activity.DoaActivity" />
         <activity android:name=".activity.HubungiKamiActivity" />
         <activity android:name=".activity.SyaratDanKetentuanActivity" />
         <activity android:name=".activity.TentangAplikasiActivity" />

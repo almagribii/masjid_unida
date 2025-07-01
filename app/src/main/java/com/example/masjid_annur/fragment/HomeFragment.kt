@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.masjid_annur.R
 import com.example.masjid_annur.activity.HaditsActivity
 import com.example.masjid_annur.activity.JadwalSholatActivity
-import com.example.masjid_annur.activity.KiblatActivity
+import com.example.masjid_annur.activity.DoaActivity
 import com.example.masjid_annur.activity.QuranActivity
 import com.example.masjid_annur.activity.TanyaUstadzActivity
 import com.example.masjid_annur.adapters.Activity2Adapter
@@ -79,7 +79,7 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
         btnKiblat.setOnClickListener {
-            val intent = Intent(activity, KiblatActivity::class.java)
+            val intent = Intent(activity, DoaActivity::class.java)
             startActivity(intent)
         }
         return view
