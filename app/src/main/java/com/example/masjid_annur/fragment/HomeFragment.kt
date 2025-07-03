@@ -140,7 +140,6 @@ class HomeFragment : Fragment() {
                 }
 
             }
-
             override fun onFailure(p0: Call<DoaAcakRespone>, p1: Throwable) {
                 Toast.makeText(requireContext(), "Gagal mengambil data.", Toast.LENGTH_SHORT).show()
             }

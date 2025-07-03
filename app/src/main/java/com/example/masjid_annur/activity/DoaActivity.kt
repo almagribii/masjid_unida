@@ -27,7 +27,7 @@ class DoaActivity : AppCompatActivity () {
 
         btnBack = findViewById(R.id.btnBack)
         recyclerDoa = findViewById(R.id.recyclerDoa)
-        doaAdapter = DoaAdapter(doaList)
+//        doaAdapter = DoaAdapter(doaList)
 
         btnBack.setOnClickListener {
             finish()

@@ -1,92 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <style name="TextAppearance.App.DisplayLarge" parent="android:TextAppearance">
         <item name="android:textSize">57sp</item>
-        <item name="android:lineHeight">64sp</item>
+
         <item name="android:fontFamily">@font/kurale_reguler</item> </style>
 
     <style name="TextAppearance.App.DisplayMedium" parent="android:TextAppearance">
         <item name="android:textSize">45sp</item>
-        <item name="android:lineHeight">52sp</item>
         <item name="android:fontFamily">@font/kurale_reguler</item>
     </style>
 
     <style name="TextAppearance.App.DisplaySmall" parent="android:TextAppearance">
         <item name="android:textSize">36sp</item>
-        <item name="android:lineHeight">44sp</item>
         <item name="android:fontFamily">@font/kurale_reguler</item>
     </style>
 
     <style name="TextAppearance.App.HeadlineLarge" parent="android:TextAppearance">
         <item name="android:textSize">32sp</item>
-        <item name="android:lineHeight">40sp</item>
         <item name="android:fontFamily">@font/kurale_reguler</item>
     </style>
 
     <style name="TextAppearance.App.HeadlineMedium" parent="android:TextAppearance">
         <item name="android:textSize">26sp</item>
-        <item name="android:lineHeight">36sp</item>
         <item name="android:fontFamily">@font/kurale_reguler</item>
     </style>
 
     <style name="TextAppearance.App.HeadlineSmall" parent="android:TextAppearance">
         <item name="android:textSize">24sp</item>
-        <item name="android:lineHeight">32sp</item>
         <item name="android:fontFamily">@font/kurale_reguler</item>
     </style>
 
     <style name="TextAppearance.App.TitleLarge" parent="android:TextAppearance">
         <item name="android:textSize">22sp</item>
-        <item name="android:lineHeight">28sp</item>
         <item name="android:fontFamily">@font/kurale_reguler</item>
     </style>
 
     <style name="TextAppearance.App.TitleMedium" parent="android:TextAppearance">
         <item name="android:textSize">16sp</item>
-        <item name="android:lineHeight">24sp</item>
         <item name="android:fontFamily">@font/kurale_reguler</item>
     </style>
 
     <style name="TextAppearance.App.TitleSmall" parent="android:TextAppearance">
         <item name="android:textSize">14sp</item>
-        <item name="android:lineHeight">20sp</item>
         <item name="android:fontFamily">@font/kurale_reguler</item>
     </style>
 
     <style name="TextAppearance.App.BodyLarge" parent="android:TextAppearance">
         <item name="android:textSize">16sp</item>
-        <item name="android:lineHeight">24sp</item>
         <item name="android:fontFamily">@font/kurale_reguler</item>
     </style>
 
     <style name="TextAppearance.App.BodyMedium" parent="android:TextAppearance">
         <item name="android:textSize">14sp</item>
-        <item name="android:lineHeight">20sp</item>
         <item name="android:fontFamily">@font/kurale_reguler</item>
     </style>
 
     <style name="TextAppearance.App.BodySmall" parent="android:TextAppearance">
         <item name="android:textSize">12sp</item>
-        <item name="android:lineHeight">18sp</item>
         <item name="android:fontFamily">@font/kurale_reguler</item>
     </style>
 
     <style name="TextAppearance.App.LabelLarge" parent="android:TextAppearance">
         <item name="android:textSize">14sp</item>
-        <item name="android:lineHeight">20sp</item>
         <item name="android:fontFamily">@font/kurale_reguler</item>
     </style>
 
     <style name="TextAppearance.App.LabelMedium" parent="android:TextAppearance">
         <item name="android:textSize">12sp</item>
-        <item name="android:lineHeight">16sp</item>
         <item name="android:fontFamily">@font/kurale_reguler</item>
     </style>
 
     <style name="TextAppearance.App.LabelSmall" parent="android:TextAppearance">
         <item name="android:textSize">11sp</item>
-        <item name="android:lineHeight">16sp</item>
         <item name="android:fontFamily">@font/kurale_reguler</item>
     </style>
     <style name="Theme.YourApp" parent="Theme.MaterialComponents.Light.NoActionBar">

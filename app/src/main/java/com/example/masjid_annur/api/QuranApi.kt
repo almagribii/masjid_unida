@@ -30,6 +30,11 @@ interface QuranApi {
 
     @GET("doa/sumber")
     fun getDoaSumber() : Call<DoaSumberRespone>
+
+    @GET("doa/sumber/{nama}")
+    fun getDetailDoa(
+        @Path("nama") nama: String
+    ): Call<DoaSumberRespone>
 }
 
 

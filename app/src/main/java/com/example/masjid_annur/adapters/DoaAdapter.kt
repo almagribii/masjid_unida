@@ -11,7 +11,8 @@ import com.example.masjid_annur.api.DoaSumberRespone
 import com.example.masjid_annur.api.Hadith
 
 class DoaAdapter(
-    private var doaList: List<String>
+    private var doaList: List<String>,
+    private val onItemClick: (String) -> Unit
 ):RecyclerView.Adapter<DoaAdapter.DoaViewHolder>() {
 
     class DoaViewHolder(view: View) : RecyclerView.ViewHolder(view){
@@ -24,6 +25,9 @@ class DoaAdapter(
     override fun onBindViewHolder(holder: DoaAdapter.DoaViewHolder, position: Int) {
         val doa = doaList[position]
         holder.tvdaftar.text = doa
+        holder.itemView.setOnClickListener {
+            onItemClick(doa)
+        }
    }
 
     override fun getItemCount(): Int = doaList.size

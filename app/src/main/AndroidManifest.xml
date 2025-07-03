@@ -21,6 +21,9 @@
         android:theme="@style/Theme.MasjidAnnur"
         tools:targetApi="31">
         <activity
+            android:name=".activity.DoaDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.IsiHaditsActivity"
             android:exported="false" />
         <activity android:name=".activity.BantuanActivity" />
@@ -31,7 +34,7 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>                                                                          
         </activity>
         <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.QuranActivity" />
@@ -42,7 +45,8 @@
         <activity android:name=".activity.SyaratDanKetentuanActivity" />
         <activity android:name=".activity.TentangAplikasiActivity" />
         <activity android:name=".activity.FAQActivity" />
-        <activity android:name=".activity.TanyaUstadzActivity" />
+        <activity android:name=".activity.TanyaUstadzActivity"
+            android:label="Chat Screen" android:windowSoftInputMode="adjustResize|stateVisible"/>
         <activity android:name=".activity.JadwalSholatActivity" />
     </application>
 

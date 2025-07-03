@@ -19,7 +19,6 @@ import retrofit2.Response
 
 class IsiHaditsActivity : AppCompatActivity() {
 
-
     private lateinit var btnBack: LinearLayout
     private var hadithNumber: String? = null
     private lateinit var tvArab: TextView

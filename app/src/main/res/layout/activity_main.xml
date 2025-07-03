@@ -16,8 +16,7 @@
         android:layout_alignParentBottom="true"
         android:padding="8dp"
         app:labelVisibilityMode="labeled"
-        app:itemIconTint="@color/BiruTua"
-        app:itemTextColor="@color/BiruTua"
-        app:itemTextAppearanceActive="@style/BottomNavigationView.ActiveText"
+        app:itemIconTint="@color/bottom_nav_color"
+        app:itemTextColor="@color/bottom_nav_color"
         app:menu="@menu/bottom_nav_menu" />
 </RelativeLayout>

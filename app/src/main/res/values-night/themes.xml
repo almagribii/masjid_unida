@@ -1,7 +1,7 @@
 <resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.MasjidAnnur" parent="Theme.MaterialComponents.Light.NoActionBar">
-
+        <item name="bottomNavigationStyle">@style/Widget.App.BottomNavigationView</item>
     </style>
 
     <style name="Theme.MasjidAnnur" parent="Base.Theme.MasjidAnnur">
@@ -11,5 +11,9 @@
         <item name="colorOnPrimary">@color/BiruTua</item>
         <item name="colorOnBackground">@color/BiruTua</item>
         <item name="colorOnPrimaryContainer">@color/BiruTua</item>
+    </style>
+
+    <style name="Widget.App.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:fontFamily">@font/kurale_reguler</item>
     </style>
 </resources>
