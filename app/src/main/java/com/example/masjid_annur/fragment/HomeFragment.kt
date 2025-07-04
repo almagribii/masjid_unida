@@ -1,6 +1,7 @@
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,9 +18,12 @@ import com.example.masjid_annur.activity.DoaActivity
 import com.example.masjid_annur.activity.QuranActivity
 import com.example.masjid_annur.activity.TanyaUstadzActivity
 import com.example.masjid_annur.adapters.Activity2Adapter
-import com.example.masjid_annur.adapters.ActivityAdapter
+import com.example.masjid_annur.adapters.ArticleAdapter
+import com.example.masjid_annur.api.ArticleApiResponse
 import com.example.masjid_annur.api.DoaAcakRespone
 import com.example.masjid_annur.api.RetrofitJuz
+import com.example.masjid_annur.api.RetrofitNews
+import kotlinx.coroutines.newSingleThreadContext
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -27,21 +31,17 @@ import retrofit2.Response
 class HomeFragment : Fragment() {
 
     private lateinit var btnQuran: LinearLayout
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var recyclerView2: RecyclerView
-    private lateinit var adapter: ActivityAdapter
-    private lateinit var adapter2: Activity2Adapter
+    private lateinit var recyclerViewNews: RecyclerView
     private lateinit var layoutManager: LinearLayoutManager
-    private lateinit var layoutManager2: LinearLayoutManager
     private lateinit var btnTasbih: LinearLayout
     private lateinit var btnJadwal: LinearLayout
     private lateinit var btnKiblat: LinearLayout
     private lateinit var btnTanya: LinearLayout
-    private lateinit var listDoaAcak: DoaAcakRespone
     private lateinit var tvdoaArab: TextView
     private lateinit var tvdoaIndo: TextView
     private lateinit var tvdoaJudul: TextView
     private lateinit var tvdoaSource: TextView
+    private lateinit var newsAdapter: ArticleAdapter
 
 
     override fun onCreateView(
@@ -89,21 +89,13 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        recyclerView2 = view.findViewById(R.id.recyclerView2)
-        recyclerView = view.findViewById(R.id.recyclerView)
+        recyclerViewNews = view.findViewById(R.id.recyclerViewNews)
         layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-//        layoutManager2 = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        recyclerView.layoutManager = layoutManager
-//        recyclerView2.layoutManager = layoutManager2
-//        recyclerView2.layoutManager = NoScrollLinearLayoutManager(context)
-//        (recyclerView2.layoutManager as NoScrollLinearLayoutManager).disableScrolling()
-
-        val datas = List(20) { "Pengajian Ahad Pagi ${it + 1}" }
-
-        adapter = ActivityAdapter(datas)
-        recyclerView.adapter = adapter
+        recyclerViewNews.layoutManager = layoutManager
+        newsAdapter = ArticleAdapter(emptyList())
+        recyclerViewNews.adapter = newsAdapter
         ambilDoa()
-
+        fetchArticle()
 
     }
 
@@ -144,6 +136,32 @@ class HomeFragment : Fragment() {
                 Toast.makeText(requireContext(), "Gagal mengambil data.", Toast.LENGTH_SHORT).show()
             }
 
+        })
+    }
+
+    private fun fetchArticle(){
+        // Menggunakan ArticleApiResponse yang sudah diperbaiki
+        RetrofitNews.instance.getNewNews().enqueue(object : Callback<ArticleApiResponse>{
+            override fun onResponse(call: Call<ArticleApiResponse>, response: Response<ArticleApiResponse>) {
+                if (response.isSuccessful){
+                    val apiResponse = response.body()
+                    // Mengakses list 'articles' yang benar dari ArticleDataWrapper
+                    apiResponse?.data?.articles?.let { articleList ->
+                        newsAdapter.updateArticles(articleList) // Memanggil updateArticles dengan list yang benar
+                    } ?: run {
+                        Log.e("HomeFragment", "Article list is null or empty from API response.")
+                        Toast.makeText(requireContext(), "Tidak ada artikel ditemukan.", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    Log.e("HomeFragment", "Gagal mengambil artikel: ${response.code()} - ${response.message()}")
+                    Toast.makeText(requireContext(), "Gagal mengambil artikel: ${response.code()}", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<ArticleApiResponse>, t: Throwable) {
+                Log.e("HomeFragment", "Kesalahan jaringan saat mengambil artikel: ${t.message}", t)
+                Toast.makeText(requireContext(), "Kesalahan jaringan saat mengambil artikel.", Toast.LENGTH_SHORT).show()
+            }
         })
     }
 }
