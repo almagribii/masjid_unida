@@ -1,49 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    tools:context=".activity.SyaratDanKetentuanActivity">
     <androidx.cardview.widget.CardView
+    android:id="@+id/customToolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="8dp"
+    app:cardBackgroundColor="@color/cardview_shadow_end_color">
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="8dp"
-        app:cardBackgroundColor="@color/cardview_shadow_end_color">
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:paddingTop="36dp"
+        android:paddingBottom="16dp">
+
+        <LinearLayout
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/border_menu"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="20dp"
+                android:layout_height="12dp"
+                android:background="@drawable/ic_arrow_back"
+                android:contentDescription="Back" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/TextAppearance.App.TitleMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Syarat &amp; Ketentuan"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/customToolbar" android:padding="16dp"
+        android:clipToPadding="false"
+        android:scrollbarStyle="outsideOverlay">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:background="@color/white"
-            android:paddingTop="36dp"
-            android:paddingBottom="16dp">
-
-            <LinearLayout
-                android:id="@+id/btnBack"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/border_menu"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="20dp"
-                    android:layout_height="12dp"
-                    android:background="@drawable/ic_arrow_back"
-                    android:contentDescription="Back" />
-            </LinearLayout>
+            android:orientation="vertical">
 
             <TextView
-                style="@style/TextAppearance.App.TitleMedium"
-                android:layout_width="wrap_content"
+                android:padding="4dp"
+                android:fontFamily="@font/kurale_reguler"
+                android:id="@+id/tv_syarat_ketentuan_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Syarat &amp; Ketentuan"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+                android:text="@string/konten_syarat_dan_ketentuan"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:lineSpacingExtra="4dp"/>
 
-</LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

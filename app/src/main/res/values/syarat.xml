@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="judul_syarat_dan_ketentuan">Syarat dan Ketentuan Penggunaan Aplikasi Masjid [Nama Aplikasi Anda]</string>
+
+    <string name="konten_syarat_dan_ketentuan">
+        <![CDATA[
+        <p>Selamat datang di Aplikasi Masjid [Nama Aplikasi Anda] ("Aplikasi"). Aplikasi ini dikembangkan untuk memfasilitasi komunikasi jamaah, menyediakan informasi jadwal sholat, donasi digital, dll. Dengan mengakses dan menggunakan Aplikasi ini, Anda dianggap telah membaca, memahami, dan menyetujui semua Syarat dan Ketentuan yang diuraikan di bawah ini. Jika Anda tidak setuju dengan Syarat dan Ketentuan ini, mohon untuk tidak menggunakan Aplikasi ini.</p>
+
+        <h2>1. Definisi Istilah</h2>
+        <ul>
+            <li><b>Aplikasi:</b> Mengacu pada Aplikasi Masjid [Nama Aplikasi Anda] dan semua fitur, layanan, konten, serta fungsionalitas yang tersedia di dalamnya.</li>
+            <li><b>Pengguna/Anda:</b> Mengacu pada setiap individu yang mengakses, mengunduh, menginstal, atau menggunakan Aplikasi ini.</li>
+            <li><b>Kami/Penyedia:</b> Mengacu pada pengembang dan/atau pemilik Aplikasi Masjid [Nama Aplikasi Anda].</li>
+            <li><b>Konten:</b> Meliputi teks, gambar, video, audio, informasi, data, dan materi lain yang disediakan atau diunggah melalui Aplikasi.</li>
+            <li><b>Masjid Terdaftar:</b> Mengacu pada masjid atau institusi keagamaan yang terdaftar dan menggunakan layanan Aplikasi ini.</li>
+        </ul>
+
+        <h2>2. Penerimaan Ketentuan</h2>
+        <p>Dengan menggunakan Aplikasi, Anda menyatakan bahwa Anda berusia minimal 17 tahun atau telah memiliki persetujuan dari orang tua/wali yang sah jika Anda berusia di bawah 17 tahun dan bertanggung jawab penuh atas penggunaan Aplikasi ini. Anda setuju untuk mematuhi semua hukum dan peraturan yang berlaku sehubungan dengan penggunaan Aplikasi Anda.</p>
+
+        <h2>3. Akun Pengguna</h2>
+        <ul>
+            <li>Anda mungkin diminta untuk membuat akun pengguna untuk mengakses fitur tertentu dari Aplikasi. Anda bertanggung jawab untuk menjaga kerahasiaan informasi akun Anda, termasuk kata sandi, dan untuk semua aktivitas yang terjadi di bawah akun Anda.</li>
+            <li>Anda setuju untuk segera memberitahukan kepada Kami jika terjadi penggunaan tidak sah atas akun Anda atau pelanggaran keamanan lainnya.</li>
+            <li>Kami berhak untuk menangguhkan atau mengakhiri akun Anda jika Kami memiliki alasan untuk mencurigai bahwa informasi yang Anda berikan tidak akurat, tidak lengkap, atau melanggar Syarat dan Ketentuan ini.</li>
+        </ul>
+
+        <h2>4. Penggunaan Aplikasi</h2>
+        <ul>
+            <li>Anda setuju untuk menggunakan Aplikasi hanya untuk tujuan yang sah dan sesuai dengan Syarat dan Ketentuan ini serta hukum yang berlaku.</li>
+            <li>Anda tidak diperkenankan untuk: (a) menggunakan Aplikasi untuk tujuan ilegal atau tidak sah; (b) mengganggu atau merusak keamanan Aplikasi atau server; (c) mencoba mengakses sistem atau jaringan Aplikasi tanpa izin; (d) mengirimkan materi yang mengandung virus, worm, trojan horse, atau kode berbahaya lainnya; (e) menyalahgunakan atau meretas data Pengguna lain.</li>
+            <li>Aplikasi ini mungkin menyediakan fitur untuk mengunggah konten. Anda bertanggung jawab penuh atas konten yang Anda unggah dan menjamin bahwa konten tersebut tidak melanggar hak kekayaan intelektual pihak ketiga atau hukum yang berlaku, serta tidak mengandung unsur SARA, pornografi, ujaran kebencian, atau informasi palsu.</li>
+        </ul>
+
+        <h2>5. Hak Kekayaan Intelektual</h2>
+        <ul>
+            <li>Seluruh hak cipta, merek dagang, paten, dan hak kekayaan intelektual lainnya yang terkait dengan Aplikasi, termasuk desain, kode sumber, grafik, teks, dan fitur, adalah milik Kami atau pemberi lisensi Kami.</li>
+            <li>Anda tidak diperkenankan untuk menyalin, mereproduksi, memodifikasi, mendistribusikan, menjual, atau mengeksploitasi bagian manapun dari Aplikasi tanpa izin tertulis dari Kami.</li>
+        </ul>
+
+        <h2>6. Privasi</h2>
+        <p>Kebijakan Privasi Kami menjelaskan bagaimana Kami mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda. Dengan menggunakan Aplikasi, Anda setuju dengan pengumpulan dan penggunaan informasi Anda sesuai dengan Kebijakan Privasi Kami. Mohon baca Kebijakan Privasi Kami secara seksama.</p>
+
+        <h2>7. Pembatasan Tanggung Jawab</h2>
+        <ul>
+            <li>Aplikasi disediakan "sebagaimana adanya" tanpa jaminan dalam bentuk apapun, baik tersurat maupun tersirat. Kami tidak menjamin bahwa Aplikasi akan bebas dari kesalahan, gangguan, atau virus.</li>
+            <li>Kami tidak bertanggung jawab atas kerugian langsung, tidak langsung, insidental, khusus, konsekuensial, atau kerugian lainnya yang timbul dari penggunaan atau ketidakmampuan menggunakan Aplikasi.</li>
+            <li>Kami tidak bertanggung jawab atas konten atau tindakan pihak ketiga, termasuk Masjid Terdaftar atau Pengguna lain.</li>
+        </ul>
+
+        <h2>8. Perubahan Syarat dan Ketentuan</h2>
+        <p>Kami berhak untuk mengubah atau memperbarui Syarat dan Ketentuan ini kapan saja tanpa pemberitahuan sebelumnya. Perubahan akan berlaku efektif segera setelah diposting di Aplikasi. Penggunaan Aplikasi secara berkelanjutan setelah perubahan menunjukkan persetujuan Anda terhadap Syarat dan Ketentuan yang telah direvisi.</p>
+
+        <h2>9. Pengakhiran</h2>
+        <p>Kami berhak untuk menangguhkan atau mengakhiri akses Anda ke Aplikasi kapan saja, tanpa pemberitahuan, jika Anda melanggar Syarat dan Ketentuan ini atau melakukan tindakan yang merugikan Aplikasi atau Pengguna lain.</p>
+
+        <h2>10. Hukum yang Berlaku</h2>
+        <p>Syarat dan Ketentuan ini akan diatur dan ditafsirkan sesuai dengan hukum yang berlaku di Republik Indonesia, tanpa memperhatikan pertentangan ketentuan hukum.</p>
+
+        <h2>11. Informasi Kontak</h2>
+        <p>Jika Anda memiliki pertanyaan mengenai Syarat dan Ketentuan ini, silakan hubungi Kami melalui [alamat email dukungan atau formulir kontak].</p>
+
+        <p>Terakhir diperbarui: 05 Juli 2025</p>
+        ]]>
+    </string>
+</resources>

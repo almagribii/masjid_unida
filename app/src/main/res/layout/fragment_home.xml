@@ -24,33 +24,30 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:background="@drawable/masjid_setengah"
-                android:gravity="bottom"
-                android:scaleType="centerCrop">
+                android:background="@drawable/masjid_setengah" android:gravity="bottom"
+                android:orientation="vertical"> <LinearLayout
+                android:id="@+id/btnTanya"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/border_tanya_ustadz">
 
-                <LinearLayout
-                    android:id="@+id/btnTanya"
-                    android:layout_width="match_parent"
-                    android:layout_height="32dp"
-                    android:layout_margin="16dp"
-                    android:background="@drawable/border_tanya_ustadz">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/ic_ustadz"
+                    app:tint="@color/black" />
 
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:src="@drawable/ic_ustadz"
-                        app:tint="@color/black" />
-
-                    <TextView
-                        style="@style/TextAppearance.App.BodyMedium"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="1dp"
-                        android:text="Tanya Pak Ustadz"
-                        android:textColor="@color/black" />
-                </LinearLayout>
+                <TextView
+                    style="@style/TextAppearance.App.BodyMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="1dp"
+                    android:text="Tanya Pak Ustadz"
+                    android:textColor="@color/black" />
+            </LinearLayout>
             </LinearLayout>
 
             <FrameLayout
@@ -209,7 +206,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:visibility="gone"
                 android:orientation="horizontal" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardCadangan"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="12dp"
+                android:visibility="visible"
+                app:cardBackgroundColor="@color/white">
+
+                <ProgressBar
+                    android:id="@+id/progressCardCadangan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 style="@style/TextAppearance.App.BodyMedium"

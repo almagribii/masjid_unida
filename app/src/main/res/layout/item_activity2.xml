@@ -48,7 +48,7 @@
                     android:layout_height="16dp"
                     android:contentDescription="Author Icon"
                     android:src="@android:drawable/ic_menu_edit"
-                    android:tint="#888888" />
+                    app:tint="@color/BiruTua" />
 
                 <TextView
                     android:id="@+id/textViewAuthor"
@@ -68,7 +68,7 @@
                     android:layout_marginStart="12dp"
                     android:contentDescription="Date Icon"
                     android:src="@android:drawable/ic_menu_today"
-                    android:tint="#888888" />
+                    app:tint="@color/BiruTua" />
 
                 <TextView
                     android:id="@+id/textViewDate"
@@ -85,11 +85,11 @@
 
         </LinearLayout>
 
-        <LinearLayout
+        <LinearLayout 
             android:id="@+id/footer_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#F5F5F5"
+            android:background="@color/BiruPalingMuda"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingHorizontal="16dp"
@@ -104,7 +104,7 @@
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="4dp"
                 android:text="Muslim.or.id"
-                android:textColor="#999999"
+                android:textColor="@color/BiruTua"
                 android:textSize="11sp"
                 android:textStyle="italic" />
 

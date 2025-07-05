@@ -42,6 +42,8 @@ class HomeFragment : Fragment() {
     private lateinit var tvdoaJudul: TextView
     private lateinit var tvdoaSource: TextView
     private lateinit var newsAdapter: ArticleAdapter
+    private lateinit var cardCadangan: View
+    private lateinit var progressCadangan: View
 
 
     override fun onCreateView(
@@ -59,7 +61,8 @@ class HomeFragment : Fragment() {
         tvdoaIndo = view.findViewById(R.id.tvDoaIndo)
         tvdoaJudul = view.findViewById(R.id.tvDoaJudul)
         tvdoaSource = view.findViewById(R.id.tvDoaSource)
-
+        cardCadangan = view.findViewById(R.id.cardCadangan)
+        progressCadangan = view.findViewById(R.id.progressCardCadangan)
         btnQuran.setOnClickListener {
             val intent = Intent(activity, QuranActivity::class.java)
             startActivity(intent)
@@ -152,15 +155,19 @@ class HomeFragment : Fragment() {
                         Log.e("HomeFragment", "Article list is null or empty from API response.")
                         Toast.makeText(requireContext(), "Tidak ada artikel ditemukan.", Toast.LENGTH_SHORT).show()
                     }
+                    cardCadangan.visibility = View.GONE
+                    recyclerViewNews.visibility = View.VISIBLE
                 } else {
                     Log.e("HomeFragment", "Gagal mengambil artikel: ${response.code()} - ${response.message()}")
                     Toast.makeText(requireContext(), "Gagal mengambil artikel: ${response.code()}", Toast.LENGTH_SHORT).show()
+                    progressCadangan.visibility = View.GONE
                 }
             }
 
             override fun onFailure(call: Call<ArticleApiResponse>, t: Throwable) {
                 Log.e("HomeFragment", "Kesalahan jaringan saat mengambil artikel: ${t.message}", t)
                 Toast.makeText(requireContext(), "Kesalahan jaringan saat mengambil artikel.", Toast.LENGTH_SHORT).show()
+                progressCadangan.visibility = View.GONE
             }
         })
     }
