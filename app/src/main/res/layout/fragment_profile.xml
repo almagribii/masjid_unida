@@ -81,7 +81,6 @@
             android:fontFamily="@font/kurale_reguler"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@id/ivArrowRightProfile"
             app:layout_constraintStart_toEndOf="@id/ivProfileImage"
             app:layout_constraintTop_toTopOf="@id/ivProfileImage" />
 
@@ -94,19 +93,10 @@
             android:text="annur.gmail.com"
             style="@style/TextAppearance.App.BodyMedium"
             android:textColor="@color/black"
-            app:layout_constraintEnd_toStartOf="@id/ivArrowRightProfile"
             app:layout_constraintStart_toEndOf="@id/ivProfileImage"
             app:layout_constraintTop_toBottomOf="@id/tvProfileName" />
 
-        <ImageView
-            android:id="@+id/ivArrowRightProfile"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:contentDescription="Go to profile details"
-            android:src="@drawable/ic_arrow_right"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

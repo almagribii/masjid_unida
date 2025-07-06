@@ -112,10 +112,10 @@
                             android:gravity="center">
 
                             <LinearLayout
-                                android:layout_width="27dp"
-                                android:layout_height="50dp"
-                                android:layout_marginTop="4dp"
-                                android:background="@drawable/tasbih"
+                                android:layout_width="64dp"
+                                android:layout_height="64dp"
+                                android:backgroundTint="#6097BD"
+                                android:background="@drawable/ic_hadits"
                                 android:contentDescription="icon location" />
                         </LinearLayout>
 
@@ -177,7 +177,8 @@
                             <LinearLayout
                                 android:layout_width="37dp"
                                 android:layout_height="37dp"
-                                android:background="@drawable/schedule"
+                                android:backgroundTint="#6097BD"
+                                android:background="@drawable/ic_doa"
                                 android:contentDescription="icon location" />
                         </LinearLayout>
 
@@ -290,7 +291,7 @@
                         android:gravity="start"
                         android:textSize="16sp"
                         android:fontFamily="@font/kurale_reguler"
-                        android:textColor="@android:color/darker_gray"
+                        android:textColor="#5B5959"
                         android:lineSpacingExtra="4dp"
                         android:layout_marginTop="16dp"
                         android:paddingStart="8dp"
