@@ -22,9 +22,10 @@ class SaldoFragment : Fragment() {
     private lateinit var tvCurrentCashBalance: TextView
     private lateinit var tvMonthlyIncome: TextView
     private lateinit var tvMonthlyExpenditure: TextView
-    private lateinit var tvErrorMessage: TextView
+    private lateinit var tvEndOfMonthBaance: TextView
     private lateinit var tvMonthlyIncome2: TextView
     private lateinit var tvMonthlyExpenditure2: TextView
+    private lateinit var error : View
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,7 +44,8 @@ class SaldoFragment : Fragment() {
         tvMonthlyIncome2 = view.findViewById(R.id.tv_total_pemasukan)
         tvMonthlyExpenditure = view.findViewById(R.id.tv_pengeluaran_bulan_ini)
         tvMonthlyExpenditure2 = view.findViewById(R.id.tv_total_pengeluaran)
-        tvErrorMessage = view.findViewById(R.id.tv_saldo_akhir_bulan)
+        tvEndOfMonthBaance = view.findViewById(R.id.tv_saldo_akhir_bulan)
+        error = view.findViewById(R.id.error)
         fetchSaldo()
     }
 
@@ -54,18 +56,23 @@ class SaldoFragment : Fragment() {
                     if (p1.isSuccessful){
                         val saldo = p1.body()
                         saldo?.let {
+                            error.visibility = View.GONE
                             tvCurrentCashBalance.text = saldo.currentCashBalance.toString()
                             tvMonthlyIncome.text = saldo.monthlyIncome.toString()
                             tvMonthlyIncome2.text = saldo.monthlyIncome.toString()
                             tvMonthlyExpenditure.text = saldo.monthlyExpenditure.toString()
                             tvMonthlyExpenditure2.text = saldo.monthlyExpenditure.toString()
-                            tvErrorMessage.text = saldo.endOfMonthBalance.toString()
+                            tvEndOfMonthBaance.text = saldo.endOfMonthBalance.toString()
                         }
+                    }else {
+                        // Handle unsuccessful responses even if the server is up but returns an error (e.g., 404, 500)
+                        error.visibility = View.VISIBLE
+                        // You could also log this for debugging: Log.e("API_CALL", "Unsuccessful response: ${p1.code()} - ${p1.message()}")
                     }
                 }
 
                 override fun onFailure(p0: Call<MasjidBalance>, p1: Throwable) {
-                    TODO("Not yet implemented")
+
                 }
 
             })
