@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object RetrofitKegiatan {
-    private const val BASE_URL = "http://10.20.2.199:8081/" // Ganti dengan URL API Anda
+    private const val BASE_URL = "http://10.10.17.101:8081/" // Ganti dengan URL API Anda
     val mLoggingInterceptor = HttpLoggingInterceptor().apply {
         level=HttpLoggingInterceptor.Level.BASIC
     }

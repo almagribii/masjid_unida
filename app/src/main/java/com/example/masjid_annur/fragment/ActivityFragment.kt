@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.authentication.RetrofitKegiatan
 import com.example.masjid_annur.R
@@ -17,7 +18,8 @@ import retrofit2.Response
 
 class ActivityFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
-    private lateinit var kegiatanAdapter :  Activity2Adapter
+    private lateinit var noResult: View
+    private lateinit var kegiatanAdapter: Activity2Adapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,27 +32,58 @@ class ActivityFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recyclerView =view.findViewById(R.id.rv_kegiatan)
+        recyclerView = view.findViewById(R.id.rv_kegiatan)
+        noResult = view.findViewById(R.id.lyt_no_result)
+        kegiatanAdapter = Activity2Adapter(mutableListOf())
+        recyclerView.adapter = kegiatanAdapter // Penting! Set adapter setelah diinisialisasi
+        recyclerView.layoutManager = LinearLayoutManager(context)
+
+        // Sembunyikan keduanya di awal, akan diatur visibilitasnya di onResponse/onFailure
+        recyclerView.visibility = View.GONE
+        noResult.visibility = View.GONE
+        // Jika punya ProgressBar, bisa ditampilkan di sini
 
         fetchKegiatan()
     }
 
-    private fun  fetchKegiatan(){
-        RetrofitKegiatan.instance.getKegiatanApi().enqueue(object : Callback<List<ResponeKegiatan>> {
-            override fun onResponse(p0: Call<List<ResponeKegiatan>>, p1: Response<List<ResponeKegiatan>>) {
-                if (p1.isSuccessful){
+    private fun fetchKegiatan() {
+        // Show a loading indicator or hide both until data is fetched
+        // If you have a loading spinner, show it here.
+        noResult.visibility = View.GONE // Hide no result while fetching
 
-                    val kegiatan =  p1.body()
-                    kegiatanAdapter.updateData(kegiatan?: emptyList())
-                } else {
-                    Log.e("Kegiatan", "Error : ${p1.code()}")
+        RetrofitKegiatan.instance.getKegiatanApi()
+            .enqueue(object : Callback<List<ResponeKegiatan>> {
+                override fun onResponse(
+                    call: Call<List<ResponeKegiatan>>, // Renamed p0 to call for clarity
+                    response: Response<List<ResponeKegiatan>> // Renamed p1 to response for clarity
+                ) {
+                    if (response.isSuccessful) {
+                        val kegiatan = response.body()
+                        if (!kegiatan.isNullOrEmpty()) {
+                            // Data received and not empty
+                            kegiatanAdapter.updateData(kegiatan)
+                            recyclerView.visibility = View.VISIBLE
+                            noResult.visibility = View.GONE
+                        } else {
+                            // API call successful, but the list is empty
+                            kegiatanAdapter.updateData(emptyList()) // Clear previous data if any
+                            recyclerView.visibility = View.GONE
+                            noResult.visibility = View.VISIBLE
+                        }
+                    } else {
+                        // API call not successful (e.g., 404, 500 status code)
+                        Log.e("Kegiatan", "Error: ${response.code()} - ${response.message()}")
+                        recyclerView.visibility = View.GONE
+                        noResult.visibility = View.VISIBLE
+                    }
                 }
-            }
 
-            override fun onFailure(p0: Call<List<ResponeKegiatan>>, p1: Throwable) {
-                Log.e("kegiatan", "error")
-            }
-
-        })
+                override fun onFailure(call: Call<List<ResponeKegiatan>>, t: Throwable) { // Renamed p0, p1 to call, t for clarity
+                    // Network error or other unexpected issues
+                    Log.e("Kegiatan", "Failed to fetch data: ${t.message}", t) // Log full error details
+                    recyclerView.visibility = View.GONE
+                    noResult.visibility = View.VISIBLE
+                }
+            })
     }
 }

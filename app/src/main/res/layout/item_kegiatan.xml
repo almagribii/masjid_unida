@@ -136,7 +136,7 @@
                     android:textSize="12sp" />
 
                 <TextView
-                    android:id="@+id/tv_kegiatan_speaker_bottom"
+                    android:id="@+id/tv_kegiatan_speaker"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/kurale_reguler"

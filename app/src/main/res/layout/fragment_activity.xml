@@ -84,6 +84,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerLayout"
-        tools:listitem="@layout/item_daftar_da"
+        tools:listitem="@layout/item_kegiatan"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>
