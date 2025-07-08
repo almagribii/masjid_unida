@@ -44,7 +44,7 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#F0F2F5"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,17 +54,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:background="@color/white"
             android:padding="16dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="@font/kurale_reguler"
-                android:text="Selamat Datang, Pengurus Masjid!"
-                android:textColor="@color/BiruTua"
-                android:textSize="22sp"
-                android:textStyle="bold" />
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="8dp"-->
+<!--                android:fontFamily="@font/kurale_reguler"-->
+<!--                android:text="Selamat Datang, Pengurus Masjid!"-->
+<!--                android:textColor="@color/BiruTua"-->
+<!--                android:textSize="22sp"-->
+<!--                android:textStyle="bold" />-->
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -128,7 +129,7 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_marginBottom="8dp"
-                            android:src="@drawable/ic_instagram" />
+                            android:src="@android:drawable/arrow_up_float" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -172,7 +173,7 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_marginBottom="8dp"
-                            android:src="@drawable/ic_facebook" />
+                            android:src="@android:drawable/arrow_down_float" />
 
                         <TextView
                             android:layout_width="wrap_content"

@@ -40,12 +40,16 @@ class JadwalSholatActivity : AppCompatActivity(){
     private lateinit var tvAshar: TextView
     private lateinit var tvMaghrib: TextView
     private lateinit var tvIsya: TextView
+    private lateinit var btnBack: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_jadwal_sholat)
-
+        btnBack = findViewById(R.id.btnQuran)
+        btnBack.setOnClickListener{
+            finish()
+        }
         greetImg = findViewById(R.id.greeting_img)
         greetText = findViewById(R.id.greeting_text)
 //        btnBack = findViewById(R.id.btnBack)
@@ -88,17 +92,17 @@ class JadwalSholatActivity : AppCompatActivity(){
 
         if (currentHour >= 0 && currentHour < 11) { // 00:00 - 10:59
             greetText?.text = "Selamat Pagi, Sudah Sholat Shubuh?"
-            greetImg?.setImageResource(R.drawable.ic_activity)
+            greetImg?.setImageResource(R.drawable.masjid_setengah)
         } else if (currentHour >= 11 && currentHour < 15){ // 11:00 - 14:59
             greetText?.text = "Selamat Siang, Sudah Sholat Dzuhur?"
-            greetImg?.setImageResource(R.drawable.ic_activity)
+            greetImg?.setImageResource(R.drawable.masjid_setengah)
         } else if (currentHour >= 15 && currentHour < 18) { // 15:00 - 17:59
             greetText?.text = "Selamat Sore, Sudah Sholat Ashar?"
-            greetImg?.setImageResource(R.drawable.ic_copy)
+            greetImg?.setImageResource(R.drawable.masjid_setengah)
         } else { // 18:00 - 23:59
             greetText?.text = "Selamat Malam, Sudah Sholat Maghrib?\nJangan lupa sholat Isya!"
             greetText?.setTextColor(Color.BLACK)
-            greetImg?.setImageResource(R.drawable.contoh)
+            greetImg?.setImageResource(R.drawable.masjid_setengah)
         }
     }
 

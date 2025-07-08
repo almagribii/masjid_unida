@@ -11,8 +11,8 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.masjid_annur.R
 import com.example.masjid_annur.fragment.ActivityFragment
 import com.example.masjid_annur.fragment.GaleryFragment
-import com.example.masjid_annur.fragment.NewsFragment
 import com.example.masjid_annur.fragment.ProfileFragment
+import com.example.masjid_annur.ui.balance.SaldoFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
             val fragment = when (item.itemId) {
                 R.id.home -> HomeFragment()
                 R.id.activity -> ActivityFragment()
-                R.id.news -> NewsFragment()
+                R.id.news -> SaldoFragment()
                 R.id.profile -> ProfileFragment()
                 else -> null
             }

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal"
+    tools:context=".ui.balance.BalanceSummaryFragment"> <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Ringkasan Saldo Masjid"
+    android:textSize="24sp"
+    android:textStyle="bold"
+    android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saldo Kas Saat Ini:"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_current_cash_balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Memuat..."
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#4CAF50" android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pemasukan Bulanan:"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_monthly_income"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Memuat..."
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#2196F3" android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pengeluaran Bulanan:"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_monthly_expenditure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Memuat..."
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#F44336" android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btn_refresh_balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Refresh Saldo"
+        android:layout_marginTop="24dp" />
+
+    <TextView
+        android:id="@+id/tv_error_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Terjadi kesalahan saat memuat data."
+        android:textColor="#FF0000"
+        android:visibility="gone"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>
