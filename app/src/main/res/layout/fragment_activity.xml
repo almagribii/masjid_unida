@@ -7,7 +7,6 @@
     android:background="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-
         android:id="@+id/headerLayout"
         android:layout_width="0dp"
         android:layout_height="87dp"
@@ -50,17 +49,16 @@
         android:layout_marginEnd="2dp"
         android:gravity="center"
         android:orientation="vertical"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone" app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/rv_kegiatan">
+        app:layout_constraintTop_toBottomOf="@+id/headerLayout">
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/ic_find"
-            app:tint="@color/BiruTua" />
+        android:layout_width="100dp"
+        android:layout_height= "100dp"
+        android:src="@drawable/ic_find"
+        app:tint="@color/BiruTua" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -74,16 +72,23 @@
 
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_kegiatan"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:clipToPadding="false"
-        android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headerLayout"
-        tools:listitem="@layout/item_kegiatan"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/headerLayout">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_kegiatan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:padding="8dp"
+            tools:listitem="@layout/item_kegiatan" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.authentication.RetrofitKegiatan
 import com.example.masjid_annur.R
 import com.example.masjid_annur.adapters.Activity2Adapter
@@ -20,6 +21,7 @@ class ActivityFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var noResult: View
     private lateinit var kegiatanAdapter: Activity2Adapter
+    private lateinit var swipe : SwipeRefreshLayout
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,17 +34,24 @@ class ActivityFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        swipe = view.findViewById(R.id.swipeRefreshLayout)
         recyclerView = view.findViewById(R.id.rv_kegiatan)
         noResult = view.findViewById(R.id.lyt_no_result)
         kegiatanAdapter = Activity2Adapter(mutableListOf())
         recyclerView.adapter = kegiatanAdapter // Penting! Set adapter setelah diinisialisasi
-        recyclerView.layoutManager = LinearLayoutManager(context)
 
+        val llm = LinearLayoutManager(context).apply {
+            stackFromEnd = true
+            reverseLayout = true
+        }
+        recyclerView.layoutManager = llm
         // Sembunyikan keduanya di awal, akan diatur visibilitasnya di onResponse/onFailure
         recyclerView.visibility = View.GONE
         noResult.visibility = View.GONE
         // Jika punya ProgressBar, bisa ditampilkan di sini
-
+        swipe.setOnRefreshListener{
+            fetchKegiatan()
+        }
         fetchKegiatan()
     }
 
@@ -64,6 +73,7 @@ class ActivityFragment : Fragment() {
                             kegiatanAdapter.updateData(kegiatan)
                             recyclerView.visibility = View.VISIBLE
                             noResult.visibility = View.GONE
+                            swipe.isRefreshing = false
                         } else {
                             // API call successful, but the list is empty
                             kegiatanAdapter.updateData(emptyList()) // Clear previous data if any
@@ -83,7 +93,10 @@ class ActivityFragment : Fragment() {
                     Log.e("Kegiatan", "Failed to fetch data: ${t.message}", t) // Log full error details
                     recyclerView.visibility = View.GONE
                     noResult.visibility = View.VISIBLE
+                    swipe.isRefreshing = false
                 }
             })
     }
+
+    
 }
