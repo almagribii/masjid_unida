@@ -46,7 +46,6 @@ class SaldoFragment : Fragment() {
         tvMonthlyExpenditure2 = view.findViewById(R.id.tv_total_pengeluaran)
         tvEndOfMonthBaance = view.findViewById(R.id.tv_saldo_akhir_bulan)
         error = view.findViewById(R.id.error)
-        fetchSaldo()
     }
 
     fun fetchSaldo() {

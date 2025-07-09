@@ -88,7 +88,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="12dp"
-                        android:text="Tidak dapat terhubung ke server. Mohon coba lagi nanti."
+                        android:text="Fitur ini sedang dalam tahap pengembangan."
                         android:textColor="@color/black"
                         android:textSize="14sp" />
 
