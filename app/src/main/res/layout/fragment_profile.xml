@@ -28,9 +28,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
              />
-
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
@@ -272,6 +269,52 @@
 
             <ImageView
                 android:id="@+id/arrowSyaratKetentuan"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Go to terms and conditions"
+                android:src="@drawable/ic_arrow_right"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.333" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tentangDeveloper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp">
+
+            <ImageView
+                android:id="@+id/iconTentang"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:contentDescription="Terms and Conditions"
+                android:src="@drawable/ic_terms"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTentangDeveloper"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Tentang Developer"
+                android:textColor="@android:color/black"
+                style="@style/TextAppearance.App.BodyLarge"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/arrowTentang"
+                app:layout_constraintStart_toEndOf="@id/iconTentang"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/arrowTentang"
                 android:layout_width="16dp"
                 android:layout_height="16dp"
                 android:layout_marginEnd="16dp"

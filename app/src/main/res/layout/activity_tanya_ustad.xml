@@ -1,109 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".activity.TanyaUstadzActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/appBarLayout"
-        android:layout_width="0dp"
-        android:layout_height="87dp"
-        android:background="@drawable/background_fragment1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:id="@+id/ivNotification"
-            android:layout_width="36dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="36dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/ic_arrow_back"
-            android:backgroundTint="@color/white"
-            android:contentDescription="Notification"
-            android:orientation="vertical"
-            android:src="@drawable/ic_arrow_back"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/tvProfileTitle"
-            style="@style/TextAppearance.App.TitleMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="Tanya Pak Ustadz"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvMessages"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constrainedHeight="true"
-        app:layout_constraintBottom_toTopOf="@id/messageInputLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
-        app:layout_constraintVertical_bias="0" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/messageInputLayout"
-        android:layout_width="0dp"
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:padding="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <EditText
-            android:id="@+id/etMessage"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_edittext_tanya"
-            android:hint="Tanya Pak Ustadz..."
-            android:fontFamily="@font/kurale_reguler"
-            android:inputType="textMultiLine"
-            android:maxLines="5"
-            android:padding="12dp"
-            android:scrollbars="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btnSendContainer"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:elevation="8dp"
+        app:cardBackgroundColor="@color/cardview_shadow_end_color">
 
         <LinearLayout
-            android:id="@+id/btnSendContainer"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="@drawable/button_tanya"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="36dp"
+            android:paddingBottom="16dp">
 
-            <ImageView
-                android:id="@+id/ivSendIcon"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:contentDescription="Send Message"
-                app:tint = "@color/white"
-                android:src="@drawable/ic_button_tanya" />
+            <LinearLayout
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/border_menu"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="20dp"
+                    android:layout_height="12dp"
+                    android:background="@drawable/ic_arrow_back"
+                    android:contentDescription="Back" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/TextAppearance.App.TitleMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tanya Pak Ustadz"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/rounded_background_light_gray"
+                android:justificationMode="inter_word"
+                android:minHeight="100dp"
+                android:padding="12dp"
+                android:text="Selamat datang! Silakan ajukan pertanyaan Anda..."
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
 
         </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingBottom="36dp"
+        android:paddingEnd="8dp"
+        android:paddingStart="8dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etQuestion"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_border_gray"
+            android:hint="Tanya Pak Ustadz..."
+            android:textColor="@color/white"
+            android:inputType="textMultiLine"
+            android:maxLines="4"
+            android:minHeight="40dp"
+            android:padding="8dp" />
+
+        <ImageButton
+            android:id="@+id/btnAsk"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:backgroundTint="@color/BiruTua"
+            android:contentDescription="Kirim Pesan"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_send"
+            app:tint="@color/white"
+            app:cornerRadius="80dp" />
+    </LinearLayout>
+
+</LinearLayout>

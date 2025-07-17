@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.core.app.ActivityCompat.finishAffinity
 import androidx.fragment.app.Fragment
 import com.example.masjid_annur.R
+import com.example.masjid_annur.activity.AboutDeveloperActivity
 import com.example.masjid_annur.activity.BantuanActivity
 import com.example.masjid_annur.activity.FAQActivity
 import com.example.masjid_annur.activity.HubungiKamiActivity
@@ -23,6 +24,7 @@ class ProfileFragment : Fragment() {
     private lateinit var btnTa: TextView
     private lateinit var btnSk: TextView
     private lateinit var btnFaq: TextView
+    private lateinit var btnTtg: TextView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,6 +36,7 @@ class ProfileFragment : Fragment() {
         btnTa = view.findViewById(R.id.tvTentangAplikasi)
         btnSk = view.findViewById(R.id.tvSyaratKetentuan)
         btnFaq = view.findViewById(R.id.tvKeluar)
+        btnTtg = view.findViewById(R.id.tvTentangDeveloper)
 
         btnBantuan?.setOnClickListener {
             val intent = Intent(activity, BantuanActivity::class.java)
@@ -56,6 +59,11 @@ class ProfileFragment : Fragment() {
 
         btnFaq.setOnClickListener{
             exitApplication()
+        }
+
+        btnTtg.setOnClickListener{
+            val intent = Intent(activity, AboutDeveloperActivity::class.java)
+            startActivity(intent)
         }
         return view
     }
