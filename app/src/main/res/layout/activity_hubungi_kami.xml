@@ -105,7 +105,7 @@
                     android:id="@+id/tv_whatsapp_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="085209876543"
+                    android:text="082210980898"
                     style="@style/TextAppearance.App.LabelMedium"
                     android:textColor="@android:color/black" />
             </LinearLayout>
@@ -179,7 +179,7 @@
                     android:id="@+id/tv_email_address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="annur@gmail.com"
+                    android:text="tamirmasjid87@gmail.com"
                     style="@style/TextAppearance.App.LabelMedium"
                     android:textColor="@android:color/black" />
             </LinearLayout>
@@ -267,7 +267,7 @@
                     android:id="@+id/tv_facebook_username"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Annur Niki-Niki"
+                    android:text="Masjid Unida"
                     style="@style/TextAppearance.App.LabelMedium"
                     android:textColor="@android:color/black" />
             </LinearLayout>
@@ -345,7 +345,7 @@
                     style="@style/TextAppearance.App.LabelMedium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="brucadal_"
+                    android:text="masjid.unidagontor"
                     android:textColor="@android:color/black" />
             </LinearLayout>
 
