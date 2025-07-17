@@ -12,12 +12,13 @@
         android:layout_height="wrap_content"
         android:elevation="8dp"
         app:cardBackgroundColor="@color/white" >
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/white"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:background="@color/white"
             android:paddingTop="36dp"
             android:paddingBottom="16dp">
 
@@ -42,7 +43,7 @@
                 style="@style/TextAppearance.App.TitleMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Al-Quran"
+                android:text="Jadwal Waktu Sholat"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
         </LinearLayout>
