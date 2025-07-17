@@ -4,13 +4,13 @@
 
     <string name="konten_syarat_dan_ketentuan">
         <![CDATA[
-        <p>Selamat datang di Aplikasi Masjid [Nama Aplikasi Anda] ("Aplikasi"). Aplikasi ini dikembangkan untuk memfasilitasi komunikasi jamaah, menyediakan informasi jadwal sholat, donasi digital, dll. Dengan mengakses dan menggunakan Aplikasi ini, Anda dianggap telah membaca, memahami, dan menyetujui semua Syarat dan Ketentuan yang diuraikan di bawah ini. Jika Anda tidak setuju dengan Syarat dan Ketentuan ini, mohon untuk tidak menggunakan Aplikasi ini.</p>
+        <p>Selamat datang di Aplikasi "MasjiQu". Aplikasi ini dikembangkan untuk memfasilitasi komunikasi jamaah, menyediakan informasi jadwal sholat, donasi digital, dll. Dengan mengakses dan menggunakan Aplikasi ini, Anda dianggap telah membaca, memahami, dan menyetujui semua Syarat dan Ketentuan yang diuraikan di bawah ini. Jika Anda tidak setuju dengan Syarat dan Ketentuan ini, mohon untuk tidak menggunakan Aplikasi ini.</p>
 
         <h2>1. Definisi Istilah</h2>
         <ul>
-            <li><b>Aplikasi:</b> Mengacu pada Aplikasi Masjid [Nama Aplikasi Anda] dan semua fitur, layanan, konten, serta fungsionalitas yang tersedia di dalamnya.</li>
+            <li><b>Aplikasi:</b> Mengacu pada Aplikasi MasjidQu dan semua fitur, layanan, konten, serta fungsionalitas yang tersedia di dalamnya.</li>
             <li><b>Pengguna/Anda:</b> Mengacu pada setiap individu yang mengakses, mengunduh, menginstal, atau menggunakan Aplikasi ini.</li>
-            <li><b>Kami/Penyedia:</b> Mengacu pada pengembang dan/atau pemilik Aplikasi Masjid [Nama Aplikasi Anda].</li>
+            <li><b>Kami/Penyedia:</b> Mengacu pada pengembang dan/atau pemilik Aplikasi MasjidQu.</li>
             <li><b>Konten:</b> Meliputi teks, gambar, video, audio, informasi, data, dan materi lain yang disediakan atau diunggah melalui Aplikasi.</li>
             <li><b>Masjid Terdaftar:</b> Mengacu pada masjid atau institusi keagamaan yang terdaftar dan menggunakan layanan Aplikasi ini.</li>
         </ul>
@@ -60,7 +60,7 @@
         <h2>11. Informasi Kontak</h2>
         <p>Jika Anda memiliki pertanyaan mengenai Syarat dan Ketentuan ini, silakan hubungi Kami melalui [alamat email dukungan atau formulir kontak].</p>
 
-        <p>Terakhir diperbarui: 05 Juli 2025</p>
+        <p>Terakhir diperbarui: 17 Juli 2025</p>
         ]]>
     </string>
 </resources>
