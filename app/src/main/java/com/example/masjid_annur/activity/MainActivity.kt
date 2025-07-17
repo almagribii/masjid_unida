@@ -10,7 +10,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.masjid_annur.R
 import com.example.masjid_annur.fragment.ActivityFragment
-import com.example.masjid_annur.fragment.GaleryFragment
 import com.example.masjid_annur.fragment.ProfileFragment
 import com.example.masjid_annur.ui.balance.SaldoFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView

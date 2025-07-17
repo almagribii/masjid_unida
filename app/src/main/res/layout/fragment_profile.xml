@@ -29,16 +29,7 @@
             app:layout_constraintStart_toStartOf="parent"
              />
 
-        <ImageView
-            android:id="@+id/ivNotification"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginEnd="36dp"
-            android:contentDescription="Notification"
-            android:src="@drawable/ic_notificatation"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="16dp" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
