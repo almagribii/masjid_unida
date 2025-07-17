@@ -1,11 +1,13 @@
 package com.example.masjid_annur.fragment
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.app.ActivityCompat.finishAffinity
 import androidx.fragment.app.Fragment
 import com.example.masjid_annur.R
 import com.example.masjid_annur.activity.BantuanActivity
@@ -31,7 +33,7 @@ class ProfileFragment : Fragment() {
         btnHk = view.findViewById(R.id.tvHubungiKami)
         btnTa = view.findViewById(R.id.tvTentangAplikasi)
         btnSk = view.findViewById(R.id.tvSyaratKetentuan)
-        btnFaq = view.findViewById(R.id.tvFAQ)
+        btnFaq = view.findViewById(R.id.tvKeluar)
 
         btnBantuan?.setOnClickListener {
             val intent = Intent(activity, BantuanActivity::class.java)
@@ -51,11 +53,22 @@ class ProfileFragment : Fragment() {
             val intent = Intent(activity, SyaratDanKetentuanActivity::class.java)
             startActivity(intent)
         }
-        btnFaq?.setOnClickListener {
-            val intent = Intent(activity, FAQActivity::class.java)
-            startActivity(intent)
+
+        btnFaq.setOnClickListener{
+            exitApplication()
         }
         return view
     }
-
+    private fun exitApplication() {
+        // Menggunakan 'activity?.let' untuk memastikan Activity tidak null
+        activity?.let { // 'it' di sini adalah referensi ke Activity induk
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                // Untuk API 21 (Lollipop) ke atas
+                it.finishAndRemoveTask()
+            } else {
+                // Untuk API di bawah 21
+                it.finishAffinity()
+            }
+        }
+    }
 }

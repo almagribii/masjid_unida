@@ -308,17 +308,18 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:contentDescription="FAQ"
-                android:src="@drawable/ic_faq"
+                android:src="@drawable/ic_keluar"
+                app:tint="#FF0000"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tvFAQ"
+                android:id="@+id/tvKeluar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="FAQ"
-                android:textColor="@android:color/black"
+                android:text="Keluar"
+                android:textColor="#FF0000"
                 style="@style/TextAppearance.App.BodyLarge"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/arrowFAQ"
@@ -332,6 +333,7 @@
                 android:layout_marginEnd="16dp"
                 android:contentDescription="Go to FAQ section"
                 android:src="@drawable/ic_arrow_right"
+                app:tint="#FF0000"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
