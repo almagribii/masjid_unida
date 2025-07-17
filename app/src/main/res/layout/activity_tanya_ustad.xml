@@ -95,7 +95,7 @@
             android:layout_marginEnd="4dp"
             android:layout_weight="1"
             android:background="@drawable/rounded_border_gray"
-            android:hint="Tanya Pak Ustadz..."
+            android:hint="   Tanya Pak Ustadz..."
             android:textColor="@color/white"
             android:inputType="textMultiLine"
             android:maxLines="4"
@@ -104,10 +104,11 @@
 
         <ImageButton
             android:id="@+id/btnAsk"
-            android:layout_width="58dp"
-            android:layout_height="58dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:backgroundTint="@color/BiruTua"
             android:contentDescription="Kirim Pesan"
+            android:background="@drawable/button_tanya"
             android:scaleType="centerInside"
             android:src="@drawable/ic_send"
             app:tint="@color/white"
