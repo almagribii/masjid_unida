@@ -1,35 +1,42 @@
 package com.example.masjid_annur.activity
 
 import android.os.Bundle
-import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.util.Log
+import android.view.Gravity
+import android.view.LayoutInflater
+import android.view.View
 import android.widget.ImageButton
-import android.widget.ImageView
+import android.widget.ProgressBar
+import android.widget.ScrollView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.masjid_annur.R
 import com.google.ai.client.generativeai.GenerativeModel
-import com.google.ai.client.generativeai.Chat // Import Chat
-import com.google.ai.client.generativeai.type.content // Import content builder
+import com.google.ai.client.generativeai.Chat
+import com.google.ai.client.generativeai.type.Content
+import com.google.ai.client.generativeai.type.content // PASTIKAN IMPORT INI ADA
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class TanyaUstadzActivity : AppCompatActivity() {
 
     private lateinit var btnBack: LinearLayout
-    private lateinit var tvResult: TextView // Untuk menampilkan riwayat percakapan
     private lateinit var etQuestion: EditText
     private lateinit var btnAsk: ImageButton
     private lateinit var generativeModel: GenerativeModel
-    private lateinit var chat: Chat // Deklarasi objek Chat
+    private lateinit var chat: Chat
+    private lateinit var llChatContainer: LinearLayout
+    private lateinit var scrollView: ScrollView
+    private lateinit var progressBar: ProgressBar
 
     // SANGAT PENTING: Jangan menyimpan API Key langsung seperti ini di aplikasi yang akan di-release!
     // Gunakan BuildConfig, local.properties, atau ambil dari backend.
-    private val API_KEY = "AIzaSyCmfuSbFOpFBKmZMNZCnpgBLO7s3CpuDEg" // Ganti dengan API Key Anda
+    private val API_KEY = "AIzaSyDW1VZe5D6vf9hyzhXm5B8PRj4pEk0YwsY" // Ganti dengan API Key Anda
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,19 +45,23 @@ class TanyaUstadzActivity : AppCompatActivity() {
 
         // Inisialisasi komponen UI
         btnBack = findViewById(R.id.btnBack)
-        tvResult = findViewById(R.id.tvResult)
         etQuestion = findViewById(R.id.etQuestion)
         btnAsk = findViewById(R.id.btnAsk)
+        llChatContainer = findViewById(R.id.llChatContainer)
+        scrollView = findViewById(R.id.scrollView)
+        progressBar = findViewById(R.id.progressBar)
 
-        // Inisialisasi GenerativeModel
+        // Inisialisasi GenerativeModel dengan system instruction
         generativeModel = GenerativeModel(
             modelName = "gemini-1.5-flash",
-            apiKey = API_KEY
+            apiKey = API_KEY,
+            systemInstruction = content {
+                text("Berperanlah sebagai ustadz dengan nama Brucad Al Magribi yang bijak dan tegas. Berikan jawaban yang padat, jelas, dan lugas sesuai tuntunan Al-Qur'an dan Sunnah. Setiap respons harus ringkas, tanpa basa-basi, namun tetap memberikan pencerahan yang kuat. jangan bilang kamu adalah program komputer")
+            }
         )
 
         // Inisialisasi objek Chat dari GenerativeModel
-        // Anda bisa memberikan riwayat awal jika ada (misalnya, dari penyimpanan lokal)
-        chat = generativeModel.startChat() // Memulai percakapan baru
+        chat = generativeModel.startChat()
 
         // Set OnClickListener untuk tombol kembali
         btnBack.setOnClickListener {
@@ -61,47 +72,85 @@ class TanyaUstadzActivity : AppCompatActivity() {
         btnAsk.setOnClickListener {
             val question = etQuestion.text.toString().trim()
             if (question.isNotEmpty()) {
-                sendPrompt(question)
+                addMessageToChat(question, true) // Tambahkan pesan pengguna
                 etQuestion.text.clear() // Kosongkan input setelah dikirim
-                // Tampilkan pesan loading atau update UI segera
-                tvResult.append("\n\nAnda: $question") // Tampilkan pertanyaan pengguna
-                tvResult.append("\nUstadz: Mohon tunggu...") // Tampilkan pesan loading
+                sendPrompt(question)
             } else {
                 etQuestion.error = "Pertanyaan tidak boleh kosong!"
             }
         }
     }
 
+    // Fungsi untuk menambahkan pesan ke tampilan chat
+    private fun addMessageToChat(message: String, isUser: Boolean) {
+        val layoutInflater = LayoutInflater.from(this)
+        val messageView = layoutInflater.inflate(R.layout.item_chat_message, llChatContainer, false) as LinearLayout
+        val tvMessage = messageView.findViewById<TextView>(R.id.tvMessage)
+
+        tvMessage.text = message
+
+        val params = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+        // Margin bawah antar pesan
+        params.setMargins(0, 0, 0, resources.getDimensionPixelSize(R.dimen.chat_message_margin_bottom))
+
+        if (isUser) {
+            // Pesan pengguna (kanan)
+            messageView.background = getDrawable(R.drawable.bg_message_user)
+            params.gravity = Gravity.END
+            tvMessage.setTextColor(resources.getColor(android.R.color.white, theme)) // Teks putih untuk pesan pengguna
+            // Margin kiri agar tidak terlalu menempel ke pinggir
+            params.marginStart = resources.getDimensionPixelSize(R.dimen.chat_message_margin_side)
+        } else {
+            // Pesan Ustadz (kiri)
+            messageView.background = getDrawable(R.drawable.bg_message_ustadz)
+            params.gravity = Gravity.START
+            tvMessage.setTextColor(resources.getColor(android.R.color.black, theme)) // Teks hitam untuk pesan Ustadz
+            // Margin kanan agar tidak terlalu menempel ke pinggir
+            params.marginEnd = resources.getDimensionPixelSize(R.dimen.chat_message_margin_side)
+        }
+
+        messageView.layoutParams = params
+        llChatContainer.addView(messageView)
+
+        // Gulir ke paling bawah setelah menambahkan pesan baru
+        scrollView.post { scrollView.fullScroll(ScrollView.FOCUS_DOWN) }
+    }
+
     // Fungsi untuk mengirim prompt ke Gemini API dan mengelola riwayat chat
     private fun sendPrompt(promptText: String) {
         lifecycleScope.launch(Dispatchers.IO) {
+            withContext(Dispatchers.Main) {
+                progressBar.visibility = View.VISIBLE // Tampilkan loading
+                btnAsk.isEnabled = false // Nonaktifkan tombol kirim saat loading
+            }
             try {
-                // Kirim pesan menggunakan objek chat, bukan langsung generativeModel
-                val response = chat.sendMessage(promptText) // Ini yang membedakan
+                // --- PERBAIKAN UTAMA ADA DI SINI ---
+                // Buat objek Content dari String promptText
+                val userContent = content { text(promptText) }
+                val response = chat.sendMessage(userContent) // Gunakan objek Content di sini
+                // ----------------------------------
+
                 val generatedText = response.text
 
-                runOnUiThread {
+                withContext(Dispatchers.Main) {
                     if (generatedText != null) {
-                        // Hapus pesan "Mohon tunggu..." dan ganti dengan jawaban sebenarnya
-                        val currentText = tvResult.text.toString()
-                        val updatedText = currentText.replace("Ustadz: Mohon tunggu...", "Ustadz: $generatedText")
-                        tvResult.text = updatedText
-
-                        // Atau jika Anda ingin selalu menambahkan ke bawah:
-                        // tvResult.append("\n\nUstadz: $generatedText")
-
+                        addMessageToChat(generatedText, false) // Tambahkan jawaban Ustadz
                     } else {
-                        val currentText = tvResult.text.toString()
-                        val updatedText = currentText.replace("Ustadz: Mohon tunggu...", "Ustadz: Tidak ada respons dari Gemini.")
-                        tvResult.text = updatedText
+                        addMessageToChat("Ustadz: Tidak ada respons dari Gemini.", false)
                     }
                 }
             } catch (e: Exception) {
                 Log.e("TanyaUstadzActivity", "Error calling Gemini API: ${e.message}", e)
-                runOnUiThread {
-                    val currentText = tvResult.text.toString()
-                    val updatedText = currentText.replace("Ustadz: Mohon tunggu...", "Ustadz: Terjadi kesalahan: ${e.message}")
-                    tvResult.text = updatedText
+                withContext(Dispatchers.Main) {
+                    addMessageToChat("Ustadz: Terjadi kesalahan: ${e.message}", false)
+                }
+            } finally {
+                withContext(Dispatchers.Main) {
+                    progressBar.visibility = View.GONE // Sembunyikan loading
+                    btnAsk.isEnabled = true // Aktifkan kembali tombol kirim
                 }
             }
         }

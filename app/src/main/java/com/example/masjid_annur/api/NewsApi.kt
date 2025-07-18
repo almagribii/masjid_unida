@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface NewsApi {
-    @GET("functions/api/ms")
+    @GET("functions/api/msh")
     fun getNewNews(): Call<ArticleApiResponse>
 }
 

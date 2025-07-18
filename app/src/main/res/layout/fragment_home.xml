@@ -199,7 +199,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
-                android:text="Berita Terbaru"
+                android:text="Informasi Terbaru"
                 android:textColor="@color/black" />
 
             <androidx.recyclerview.widget.RecyclerView
